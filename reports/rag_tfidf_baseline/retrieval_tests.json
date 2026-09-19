@@ -1,0 +1,594 @@
+[
+  {
+    "question": "有哪些适合 Python 和 SQL 的远程数据分析岗位？",
+    "top_k": 3,
+    "results": [
+      {
+        "job_id": "587e62d3955e4cd5762c8075",
+        "job_title": "Sr. Data Analyst I",
+        "company_name": "Reserv",
+        "broad_category": "Data Science",
+        "skills_normalized": "data analyst | business intelligence analyst | claims analytics | senior level data analyst | senior data analytics | senior analytics analyst | senior bi and data analyst | senior bi and analytics analyst | senior data analyst jobs | senior bi analyst",
+        "district": "United States",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/reserv/jobs/sr-data-analyst-i-5384728223",
+        "crawl_time": "2026-09-08T13:19:08.417529+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.175009,
+        "matched_query_skills": [
+          "python",
+          "sql"
+        ]
+      },
+      {
+        "job_id": "e30bb894d570bfa7ec374f5b",
+        "job_title": "Senior Data Engineer",
+        "company_name": "Tabby",
+        "broad_category": "Data Science",
+        "skills_normalized": "data engineering | data engineer | backend engineering | etl pipeline development | feature stores | senior data engineering | senior data engineer jobs | senior data engineer positions",
+        "district": "Poland",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/tabby/jobs/senior-data-engineer-3543063080",
+        "crawl_time": "2026-09-08T13:23:33.513532+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.166942,
+        "matched_query_skills": [
+          "python",
+          "sql"
+        ]
+      },
+      {
+        "job_id": "188cee8008f6a7c80c57a35d",
+        "job_title": "Desenvolvedor(a) Python Sênior",
+        "company_name": "Grupo Data",
+        "broad_category": "Engineering",
+        "skills_normalized": "python developer | backend engineer | software engineer | distributed systems developer | desarrollador python senior | senior python developer (south america)",
+        "district": "Portugal",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/grupo-data/jobs/desenvolvedor-a-python-senior",
+        "crawl_time": "2026-09-08T13:01:15.474784+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.166364,
+        "matched_query_skills": [
+          "python",
+          "sql"
+        ]
+      }
+    ],
+    "skill_hit_counts": {
+      "python": 3,
+      "sql": 3
+    },
+    "category_hit_count": 2,
+    "location_nonempty_count": 0
+  },
+  {
+    "question": "哪些岗位要求 machine learning 技能？",
+    "top_k": 3,
+    "results": [
+      {
+        "job_id": "6d2e6f6a32147a28936f5c7d",
+        "job_title": "Machine Learning Expert - Fully Remote | Upto $90/hr",
+        "company_name": "mercor",
+        "broad_category": "Data Science",
+        "skills_normalized": "machine learning research | ai research scientist | ml engineering | deep learning research | research science | remote machine learning engineer | freelance machine learning engineer | machine learning developer | machine learning expert | machine learning specialist | ai machine learning specialist",
+        "district": "United States",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/mercor/jobs/machine-learning-expert-fully-remote-upto-90-hr-5945044061",
+        "crawl_time": "2026-09-08T12:53:52.386472+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.285854,
+        "matched_query_skills": [
+          "machine learning"
+        ]
+      },
+      {
+        "job_id": "e38b153b13b09dc13396c885",
+        "job_title": "Machine Learning (ML) AI Task Auditor - Freelance AI Trainer Project",
+        "company_name": "Invisible Technologies",
+        "broad_category": "Data Science",
+        "skills_normalized": "machine learning | ai training | ai auditing | machine learning qa | technical review | freelance ai trainer | ai training freelance | freelance ai model trainer | freelance ai training specialist | freelance ai data trainer | ai ml freelance | ai trainer",
+        "district": "",
+        "salary_raw": "USD 70-100 hourly",
+        "source_url": "https://himalayas.app/companies/inv/jobs/machine-learning-ml-ai-task-auditor-freelance-ai-trainer-project",
+        "crawl_time": "2026-09-08T12:56:48.498635+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.270478,
+        "matched_query_skills": [
+          "machine learning"
+        ]
+      },
+      {
+        "job_id": "814b583a2cc5064fd6393532",
+        "job_title": "Machine Learning Engineer (Remote or Relocation to Montenegro)",
+        "company_name": "Libertex Group",
+        "broad_category": "Data Science",
+        "skills_normalized": "machine learning engineering | mlops | data science | fintech | ai engineering | machine learning engineer | machine learning engineer jobs | lead machine learning engineer | ai ml engineer | machine learning research engineer",
+        "district": "Armenia, Georgia, Montenegro, Serbia, Spain, Turkey",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/libertex-group/jobs/machine-learning-engineer-remote-or-relocation-to-montenegro",
+        "crawl_time": "2026-09-08T12:51:31.864180+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.263661,
+        "matched_query_skills": [
+          "machine learning"
+        ]
+      }
+    ],
+    "skill_hit_counts": {
+      "machine learning": 3
+    },
+    "category_hit_count": 0,
+    "location_nonempty_count": 0
+  },
+  {
+    "question": "有哪些岗位属于 Engineering 类别？",
+    "top_k": 3,
+    "results": [
+      {
+        "job_id": "d2d6fc65eb052c26df2f6ee1",
+        "job_title": "Senior Manager Software Engineering",
+        "company_name": "Verisk",
+        "broad_category": "Engineering",
+        "skills_normalized": "engineering manager | technology leadership | engineering management | software engineering management | software development leadership | it management | manager software engineer | software engineering manager",
+        "district": "United States",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/verisk/jobs/senior-manager-software-engineering",
+        "crawl_time": "2026-09-08T12:53:58.782181+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.12801,
+        "matched_query_skills": []
+      },
+      {
+        "job_id": "a31c0c325470587e440cd565",
+        "job_title": "Air Systems",
+        "company_name": "SAPSOL Technologies Inc.",
+        "broad_category": "Engineering",
+        "skills_normalized": "aerospace engineering | air systems engineering | pneumatics engineering | aircraft systems engineering | systems engineering | bleed air systems engineering | pneumatic systems engineering | faa systems",
+        "district": "Canada",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/sapsol-technologies-inc/jobs/air-systems",
+        "crawl_time": "2026-09-08T12:53:37.899312+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.125907,
+        "matched_query_skills": []
+      },
+      {
+        "job_id": "5663af856382c8ee0e1e9b13",
+        "job_title": "核心开发(Trading Engine Core Dev)",
+        "company_name": "Gate",
+        "broad_category": "Engineering",
+        "skills_normalized": "fintech | backend development | trading systems | high frequency trading | systems engineering | trading systems software engineer | trading systems engineer | trading systems backend engineer | trading engineering | trading systems engineering | senior trading systems engineer | trading systems developer | senior trading technology engineer | trading platform development | r&d",
+        "district": "China",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/gate/jobs/trading-engine-core-dev",
+        "crawl_time": "2026-09-08T13:22:39.813495+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.1193,
+        "matched_query_skills": []
+      }
+    ],
+    "skill_hit_counts": {},
+    "category_hit_count": 3,
+    "location_nonempty_count": 0
+  },
+  {
+    "question": "哪些岗位包含 Excel 和 Tableau？",
+    "top_k": 3,
+    "results": [
+      {
+        "job_id": "41dc971c86011e30d9c32c37",
+        "job_title": "Tableau CRM Business Analyst",
+        "company_name": "PradeepIT Consulting Services Pvt Ltd",
+        "broad_category": "Data Science",
+        "skills_normalized": "business analyst | tableau crm analyst | salesforce analyst | crm business analyst | business intelligence analyst | salesforce business analyst | salesforce crma analyst",
+        "district": "India",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/pradeepit-consulting-services-pvt-ltd/jobs/tableau-crm-business-analyst",
+        "crawl_time": "2026-09-08T12:46:59.034317+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.29946,
+        "matched_query_skills": [
+          "tableau"
+        ]
+      },
+      {
+        "job_id": "fe45bcd359fc2e04daa8a3f7",
+        "job_title": "Business Analyst",
+        "company_name": "Delta Exchange",
+        "broad_category": "Data Science",
+        "skills_normalized": "business analyst | data analyst | business intelligence analyst | systems analyst | business analysis | is business analyst | business systems analyst | business analysis jobs | it business analysts | business analysis consultant",
+        "district": "India",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/delta-exchange/jobs/business-analyst-6617822836",
+        "crawl_time": "2026-09-08T12:43:05.263749+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.171622,
+        "matched_query_skills": [
+          "excel",
+          "tableau"
+        ]
+      },
+      {
+        "job_id": "474c2d416bc0165abd117cb8",
+        "job_title": "Business Operations Analyst II",
+        "company_name": "Labcorp",
+        "broad_category": "Data Science",
+        "skills_normalized": "business operations analyst | business intelligence analyst | operations analyst | data analyst | reporting analyst | business operations analyst ii | it business operations analyst",
+        "district": "United States",
+        "salary_raw": "USD 65000-85000 annual",
+        "source_url": "https://himalayas.app/companies/labcorp/jobs/business-operations-analyst-ii",
+        "crawl_time": "2026-09-08T13:02:41.950130+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.15931,
+        "matched_query_skills": [
+          "excel",
+          "tableau"
+        ]
+      }
+    ],
+    "skill_hit_counts": {
+      "excel": 2,
+      "tableau": 3
+    },
+    "category_hit_count": 0,
+    "location_nonempty_count": 0
+  },
+  {
+    "question": "有哪些岗位有明确地区限制？",
+    "top_k": 3,
+    "results": [
+      {
+        "job_id": "00042894ea65928a375b043d",
+        "job_title": "Data Scientist",
+        "company_name": "Delan Associates",
+        "broad_category": "Data Science",
+        "skills_normalized": "data scientist | analytics | business intelligence | data insights | search data scientist | ai data scientist | data science expert | data science | data science specialist | ml data scientist | statistical data scientist | research data scientist | data scientist analytics",
+        "district": "United States",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/delan-associates/jobs/data-scientist",
+        "crawl_time": "2026-09-08T12:43:16.729579+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.0,
+        "matched_query_skills": []
+      },
+      {
+        "job_id": "000be624729c457d524f14d4",
+        "job_title": "Pork Sales Intern",
+        "company_name": "Zoetis",
+        "broad_category": "Sales",
+        "skills_normalized": "sales internships | agricultural sales | animal health sales | swine industry sales | us pork team | sales intern | sales and marketing intern | agribusiness intern | inside sales intern | sales support intern | entry level agricultural sales representative | sales and business development intern | sales",
+        "district": "United States",
+        "salary_raw": "USD 16-40.3 hourly",
+        "source_url": "https://himalayas.app/companies/zoetis/jobs/pork-sales-intern",
+        "crawl_time": "2026-09-08T12:48:43.843516+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.0,
+        "matched_query_skills": []
+      },
+      {
+        "job_id": "0012a0ec807b2aa3f24d464b",
+        "job_title": "VOLUNTEER Entrepreneurship Program Operations Coordinator (ID154)",
+        "company_name": "EUSMS gGmbH",
+        "broad_category": "Operations",
+        "skills_normalized": "entrepreneurship program coordination | program coordinator | ngo operations | social impact | community development | volunteer program coordinator | program operations coordinator | volunteer program manager | entrepreneurship program director | nonprofit operations intern | employment program coordinator | business operations coordinator | startup accelerator coordinator | operations coordinator | operations",
+        "district": "Germany",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/eusms-ggmbh/jobs/volunteer-entrepreneurship-program-operations-coordinator-id154",
+        "crawl_time": "2026-09-08T12:45:01.116054+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.0,
+        "matched_query_skills": []
+      }
+    ],
+    "skill_hit_counts": {},
+    "category_hit_count": 0,
+    "location_nonempty_count": 3
+  },
+  {
+    "question": "哪些远程岗位同时涉及 AWS、Docker 和 Kubernetes？",
+    "top_k": 3,
+    "results": [
+      {
+        "job_id": "37f067d04f8ef467722bb08b",
+        "job_title": "Software Engineer",
+        "company_name": "Hooli Software",
+        "broad_category": "Engineering",
+        "skills_normalized": "it software engineer | software engineer | software developer | full stack developer | devops engineer | software engineer jobs | software engineering jobs | front end developer | backend engineer",
+        "district": "Philippines",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/hooli-software/jobs/software-engineer",
+        "crawl_time": "2026-09-08T12:46:55.458235+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.266819,
+        "matched_query_skills": [
+          "aws",
+          "docker",
+          "kubernetes"
+        ]
+      },
+      {
+        "job_id": "adf988c70b1aaf5fb0281c11",
+        "job_title": "AWS DevOps Engineer",
+        "company_name": "Productiv Team",
+        "broad_category": "Engineering",
+        "skills_normalized": "devops engineer | platform engineer | aws devops | site reliability engineer | infrastructure engineer | aws devops engineer | aws devops engineering | aws devops specialist | senior aws devops engineer | cloud devops engineer | aws operations engineer | aws cloud engineer",
+        "district": "Poland",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/productiv-team/jobs/aws-devops-engineer",
+        "crawl_time": "2026-09-08T13:09:25.460122+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.264356,
+        "matched_query_skills": [
+          "aws",
+          "docker",
+          "kubernetes"
+        ]
+      },
+      {
+        "job_id": "81aafee01005775314a3652e",
+        "job_title": "AI Engineer / Machine Learning Engineer – MLOps",
+        "company_name": "KATBOTZ",
+        "broad_category": "Data Science",
+        "skills_normalized": "machine learning engineer | mlops engineer | ai engineer | devops engineer | data engineering | mlops engineer jobs | ai ml engineer | ai ml ops engineer | ai ml engineer jobs",
+        "district": "United States",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/katbotz/jobs/ai-engineer-machine-learning-engineer-mlops",
+        "crawl_time": "2026-09-08T12:45:55.156595+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.255307,
+        "matched_query_skills": [
+          "aws",
+          "docker",
+          "kubernetes"
+        ]
+      }
+    ],
+    "skill_hit_counts": {
+      "aws": 3,
+      "docker": 3,
+      "kubernetes": 3
+    },
+    "category_hit_count": 2,
+    "location_nonempty_count": 0
+  },
+  {
+    "question": "有哪些岗位需要 pandas 和 PostgreSQL？",
+    "top_k": 3,
+    "results": [
+      {
+        "job_id": "556f787d90c9e577d5ce4e74",
+        "job_title": "Senior ASE Database Administrator",
+        "company_name": "BayNova LLC",
+        "broad_category": "Data Science",
+        "skills_normalized": "senior database administrator | ase database administration | postgresql administration | cloud database administration | database engineering | senior database administration | senior database engineer | senior database engineering | senior database specialist | senior sybase database administrator | senior database administrator (sql nosql)",
+        "district": "United States",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/baynova-llc/jobs/senior-ase-database-administrator",
+        "crawl_time": "2026-09-08T13:10:43.246377+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.208141,
+        "matched_query_skills": [
+          "postgresql",
+          "sql"
+        ]
+      },
+      {
+        "job_id": "89477fadf008f907b2986917",
+        "job_title": "Database Administrator",
+        "company_name": "BayNova LLC",
+        "broad_category": "Data Science",
+        "skills_normalized": "database administration | database administrator | dba | postgresql administration | database engineering | sql database administrator | database application administrator | database administration (dba) | oracle database administrator | sql server database administrator | senior database administrator",
+        "district": "United States",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/baynova-llc/jobs/database-administrator",
+        "crawl_time": "2026-09-08T13:08:03.409976+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.201352,
+        "matched_query_skills": [
+          "postgresql",
+          "sql"
+        ]
+      },
+      {
+        "job_id": "221af3fc7fb45ef4420829ae",
+        "job_title": "Senior ASE Database Administrator",
+        "company_name": "By Light Professional IT Services LLC",
+        "broad_category": "Data Science",
+        "skills_normalized": "database administration | senior database administrator | ase database administration | postgresql administration | it infrastructure | senior database administration | senior database engineer | senior database engineering | senior database specialist | senior sybase database administrator | senior database administrator (sql nosql)",
+        "district": "United States",
+        "salary_raw": "USD 100000-150000 annual",
+        "source_url": "https://himalayas.app/companies/by-light-professional-it-services-llc/jobs/senior-ase-database-administrator",
+        "crawl_time": "2026-09-08T13:21:20.216125+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.189485,
+        "matched_query_skills": [
+          "postgresql",
+          "sql"
+        ]
+      }
+    ],
+    "skill_hit_counts": {
+      "pandas": 0,
+      "postgresql": 3
+    },
+    "category_hit_count": 3,
+    "location_nonempty_count": 0
+  },
+  {
+    "question": "哪些岗位要求 JavaScript 和 TypeScript？",
+    "top_k": 3,
+    "results": [
+      {
+        "job_id": "5f427e75564aa66a8c25a055",
+        "job_title": "Senior Typescript Developer (f/m/d)",
+        "company_name": "SIDESTREAM",
+        "broad_category": "Engineering",
+        "skills_normalized": "senior typescript developer | full stack developer | vue.js developer | nuxt.js developer | software development | senior typescript backend developer | senior full stack engineer (typescript angular node) | remote senior frontend developer (typescript nextjs) | senior frontend engineer (angular) | javascript typescript developer | senior javascript developer | senior front end developer (vue.js) | senior angular frontend developer",
+        "district": "Germany",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/sidestream/jobs/senior-typescript-developer-f-m-d-2844198937",
+        "crawl_time": "2026-09-08T12:47:09.567897+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.264844,
+        "matched_query_skills": [
+          "java",
+          "javascript",
+          "typescript"
+        ]
+      },
+      {
+        "job_id": "17606b492a78a569ee420a40",
+        "job_title": "Senior Full Stack Engineer (Video Platform) - LATAM-Remote",
+        "company_name": "Bydrec",
+        "broad_category": "Engineering",
+        "skills_normalized": "full stack engineer | full stack developer | backend engineer | frontend engineer | software engineer | remote senior full stack developer | senior full stack engineer (react node.js) | senior frontend full stack engineer",
+        "district": "Brazil",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/bydrec/jobs/senior-full-stack-engineer-video-platform-latam-remote",
+        "crawl_time": "2026-09-08T13:02:38.346500+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.243126,
+        "matched_query_skills": [
+          "java",
+          "javascript",
+          "typescript"
+        ]
+      },
+      {
+        "job_id": "44f4c4d4c9cf32ee87e5cf1b",
+        "job_title": "Frontend Engineer Specialist",
+        "company_name": "micro1",
+        "broad_category": "Engineering",
+        "skills_normalized": "frontend engineer | web frontend engineer | front end software engineer | frontend web software engineer | front end developer | react frontend engineer | ui frontend developer",
+        "district": "",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/micro1/jobs/frontend-engineer-specialist",
+        "crawl_time": "2026-09-08T12:48:22.498544+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.235999,
+        "matched_query_skills": [
+          "java",
+          "javascript",
+          "typescript"
+        ]
+      }
+    ],
+    "skill_hit_counts": {
+      "javascript": 3,
+      "typescript": 3
+    },
+    "category_hit_count": 3,
+    "location_nonempty_count": 0
+  },
+  {
+    "question": "有哪些 Product 类别的远程岗位？",
+    "top_k": 3,
+    "results": [
+      {
+        "job_id": "056296d9bfab7aae50cdbd5a",
+        "job_title": "Product Manager - ASO/SEO",
+        "company_name": "Gate",
+        "broad_category": "Marketing",
+        "skills_normalized": "product management | aso | seo | growth marketing | mobile marketing | aso product management | seo product management | search product manager | product manager",
+        "district": "China",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/gate/jobs/product-manager-aso-seo",
+        "crawl_time": "2026-09-08T13:22:44.980875+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.159262,
+        "matched_query_skills": []
+      },
+      {
+        "job_id": "f473c807095a40bc2d2dc31b",
+        "job_title": "Product Manager - Compliance",
+        "company_name": "Gate",
+        "broad_category": "Product",
+        "skills_normalized": "product management | fintech | risk management | cryptocurrency | compliance product management | compliance product manager | senior compliance product manager | product compliance manager | compliance",
+        "district": "China",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/gate/jobs/product-manager-compliance",
+        "crawl_time": "2026-09-08T13:22:39.813495+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.156929,
+        "matched_query_skills": []
+      },
+      {
+        "job_id": "64b9782eb7b3e4e45b6094cf",
+        "job_title": "Principal Product Manager - Mobile",
+        "company_name": "KFC Global Careers",
+        "broad_category": "Product",
+        "skills_normalized": "mobile product manager | principal product manager | mobile application product manager | principal product management | mobile apps product manager | product manager",
+        "district": "United States",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/kfc-global-careers/jobs/principal-product-manager-mobile",
+        "crawl_time": "2026-09-08T12:54:11.078933+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.122521,
+        "matched_query_skills": []
+      }
+    ],
+    "skill_hit_counts": {},
+    "category_hit_count": 2,
+    "location_nonempty_count": 0
+  },
+  {
+    "question": "哪些 Finance 类别岗位适合有 Excel 经验的人？",
+    "top_k": 3,
+    "results": [
+      {
+        "job_id": "fa33acbc6010b83fd98c748f",
+        "job_title": "Remote Senior Financial Analyst",
+        "company_name": "Jobs for Humanity",
+        "broad_category": "Finance",
+        "skills_normalized": "financial analyst | financial analysis | financial planning and analysis | finance | fp&a analyst | remote financial analyst | remote senior healthcare financial analyst | senior finance analyst",
+        "district": "Lebanon",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/jobsforlebanon/jobs/remote-senior-financial-analyst",
+        "crawl_time": "2026-09-08T12:46:46.426050+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.170404,
+        "matched_query_skills": [
+          "excel"
+        ]
+      },
+      {
+        "job_id": "a1a0d5a1a9fb744a5fed195a",
+        "job_title": "Finance Executive (AP) - 1 Yr Contract",
+        "company_name": "People Profilers",
+        "broad_category": "Finance",
+        "skills_normalized": "finance executive | accounts payable | financial accounting | ap accounting | accounts executive | accounts payable executive | finance associate | financial accountant | accounting executive | finance",
+        "district": "United States",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/people-profilers/jobs/finance-executive-ap-1-yr-contract",
+        "crawl_time": "2026-09-08T13:00:47.371399+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.14676,
+        "matched_query_skills": [
+          "excel"
+        ]
+      },
+      {
+        "job_id": "4caa9dcdc0f0da1c730b1196",
+        "job_title": "Analista de planeación financiera Junior (Bilingüe) (CO, Colombia, Virtual, Colo",
+        "company_name": "BCD Travel",
+        "broad_category": "Finance",
+        "skills_normalized": "financial planning and analysis | financial analysis | finance | budgeting | corporate finance | remote junior financial analyst | junior finance analyst | junior financial analyst | fp&a analyst",
+        "district": "Colombia",
+        "salary_raw": "",
+        "source_url": "https://himalayas.app/companies/bcd-travel/jobs/analista-de-planeacion-financiera-junior-bilingue-co-colombia-virtual-colo-5323348442",
+        "crawl_time": "2026-09-08T12:48:22.498544+00:00",
+        "data_origin": "authorized_api_collection",
+        "retrieval_score": 0.144654,
+        "matched_query_skills": [
+          "excel"
+        ]
+      }
+    ],
+    "skill_hit_counts": {
+      "excel": 3
+    },
+    "category_hit_count": 3,
+    "location_nonempty_count": 0
+  }
+]

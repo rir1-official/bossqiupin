@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-09-19",
+  "measurement": "FastAPI TestClient on the local project Python runtime",
+  "cold_initialization": {
+    "status": 200,
+    "seconds": 13.4496,
+    "includes": "Parquet load, LocalJobAgent initialization, TF-IDF matching index construction, and first match"
+  },
+  "warm_cases": [
+    {
+      "case": "warm_match_top_k_5",
+      "statuses": [
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "runs_seconds": [
+        0.1929,
+        0.1537,
+        0.1705,
+        0.1543,
+        0.1733
+      ],
+      "median_seconds": 0.1705
+    },
+    {
+      "case": "warm_match_top_k_1",
+      "statuses": [
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "runs_seconds": [
+        0.1871,
+        0.204,
+        0.1862,
+        0.2044,
+        0.1884
+      ],
+      "median_seconds": 0.1884
+    },
+    {
+      "case": "warm_match_top_k_20",
+      "statuses": [
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "runs_seconds": [
+        0.2108,
+        0.1935,
+        0.2194,
+        0.1947,
+        0.2111
+      ],
+      "median_seconds": 0.2108
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "chunk_size": 800,
+    "overlap": 120,
+    "chunk_count": 104565,
+    "mean_chars": 665.0146033567637,
+    "median_chars": 724.0,
+    "short_chunk_rate": 0.05379429063262086
+  },
+  {
+    "chunk_size": 1200,
+    "overlap": 200,
+    "chunk_count": 69252,
+    "mean_chars": 1011.7887136833593,
+    "median_chars": 1113.0,
+    "short_chunk_rate": 0.05017905620054294
+  },
+  {
+    "chunk_size": 1600,
+    "overlap": 250,
+    "chunk_count": 51376,
+    "mean_chars": 1337.5590742759266,
+    "median_chars": 1500.0,
+    "short_chunk_rate": 0.059950171286203675
+  }
+]

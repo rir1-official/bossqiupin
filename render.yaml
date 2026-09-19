@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: bossqiupin-api
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerCommand: sh -c 'uvicorn app.backend:app --host 0.0.0.0 --port ${PORT:-8000}'
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHONPATH
+        value: /app/src
+      - key: AGENT_PROTOCOL
+        value: auto
+      - key: HF_LOCAL_FILES_ONLY
+        value: "0"
+      - key: HF_HUB_DISABLE_TELEMETRY
+        value: "1"
+
+  - type: web
+    name: bossqiupin-frontend
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile.frontend
+    envVars:
+      - key: API_URL
+        value: https://bossqiupin-api.onrender.com
+      - key: FRONTEND_API_TIMEOUT
+        value: "180"
+      - key: FRONTEND_REAL_AGENT_TIMEOUT
+        value: "150"

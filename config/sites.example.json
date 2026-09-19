@@ -1,0 +1,50 @@
+{
+  "request": {
+    "timeout_seconds": 20,
+    "min_delay_seconds": 2,
+    "max_delay_seconds": 5,
+    "keyword_pause_min_seconds": 60,
+    "keyword_pause_max_seconds": 120,
+    "max_retries": 3,
+    "batch_size": 500
+  },
+  "targets": {
+    "cities": ["厦门", "福州", "泉州", "深圳", "杭州", "上海"],
+    "keywords": ["数据分析", "数据开发", "大数据", "Python", "Java", "后端开发", "测试", "运维", "算法工程师", "人工智能"]
+  },
+  "sources": [
+    {
+      "name": "verified_public_source",
+      "enabled": false,
+      "format": "json",
+      "list_url_template": "https://PUBLIC-SITE.example/api/jobs?city={city}&keyword={keyword}&page={page}",
+      "items_path": "data.items",
+      "total_path": "data.total",
+      "page_size": 20,
+      "detail_url_template": "https://PUBLIC-SITE.example/api/jobs/{id}",
+      "detail_id_path": "id",
+      "detail_field_map": {
+        "job_description": "data.description",
+        "skills": "data.skills"
+      },
+      "field_map": {
+        "job_id": "id",
+        "job_title": "title",
+        "company_name": "company.name",
+        "city": "city",
+        "district": "district",
+        "salary_raw": "salary",
+        "experience_raw": "experience",
+        "education": "education",
+        "publish_date": "publish_time",
+        "job_description": "description",
+        "industry": "company.industry",
+        "company_type": "company.type",
+        "company_size": "company.size",
+        "skills": "skills",
+        "job_category": "category",
+        "source_url": "url"
+      }
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "agent_mode": "local_rule_router",
+  "model_call": false,
+  "task": "帮我找适合 Python、SQL、4 年经验、允许美国远程的数据岗位，并说明哪些技能匹配、哪些岗位信息质量较高。",
+  "tool_calls": [
+    {
+      "tool": "match_resume",
+      "arguments": {
+        "resume_text": "帮我找适合 Python、SQL、4 年经验、允许美国远程的数据岗位，并说明哪些技能匹配、哪些岗位信息质量较高。",
+        "top_k": 3,
+        "resume_category": "Data Science",
+        "resume_years": 4.0,
+        "preferred_locations": [
+          "United States"
+        ]
+      }
+    },
+    {
+      "tool": "score_job",
+      "arguments": {
+        "job_id": "8e6d5c1e78fdc46f3e6beee8"
+      }
+    },
+    {
+      "tool": "score_job",
+      "arguments": {
+        "job_id": "45915ad424e2dfa8846aa17c"
+      }
+    },
+    {
+      "tool": "score_job",
+      "arguments": {
+        "job_id": "4f6d552faa633e0c8726b72a"
+      }
+    }
+  ],
+  "results": [
+    {
+      "job_id": "8e6d5c1e78fdc46f3e6beee8",
+      "job_title": "Data Warehouse Integration Engineer",
+      "company_name": "Concept Plus",
+      "district": "United States",
+      "source_url": "https://himalayas.app/companies/concept-plus/jobs/data-warehouse-integration-engineer",
+      "match_score": 61.62,
+      "skill_score": 30.22,
+      "category_score": 100.0,
+      "experience_score": 100.0,
+      "location_score": 100.0,
+      "cosine_similarity": 0.0032,
+      "matched_skills": [
+        "sql"
+      ],
+      "missing_skills": [],
+      "salary_reference": "未披露",
+      "quality_level": "Medium",
+      "explanation": "综合匹配分 61.62。技能相似度分项 30.22，命中技能：sql；主要缺失技能：暂无主要技能缺口。岗位类别分项 100.00，经验分项 100.00，地点分项 100.00。薪资仅作参考：未披露。",
+      "quality_score": 67.0
+    },
+    {
+      "job_id": "45915ad424e2dfa8846aa17c",
+      "job_title": "IoT/GIS Analyst",
+      "company_name": "McKim & Creed, Inc.",
+      "district": "United States",
+      "source_url": "https://himalayas.app/companies/mckim-creed-inc/jobs/iot-gis-analyst",
+      "match_score": 61.6,
+      "skill_score": 30.18,
+      "category_score": 100.0,
+      "experience_score": 100.0,
+      "location_score": 100.0,
+      "cosine_similarity": 0.0025,
+      "matched_skills": [
+        "python",
+        "sql"
+      ],
+      "missing_skills": [],
+      "salary_reference": "未披露",
+      "quality_level": "Medium",
+      "explanation": "综合匹配分 61.60。技能相似度分项 30.18，命中技能：python、sql；主要缺失技能：暂无主要技能缺口。岗位类别分项 100.00，经验分项 100.00，地点分项 100.00。薪资仅作参考：未披露。",
+      "quality_score": 76.0
+    },
+    {
+      "job_id": "4f6d552faa633e0c8726b72a",
+      "job_title": "Competitive Programming Expert - Freelance AI Trainer",
+      "company_name": "Mindrift",
+      "district": "United States",
+      "source_url": "https://himalayas.app/companies/mindrift/jobs/competitive-programming-expert-freelance-ai-trainer-3860771417",
+      "match_score": 58.6,
+      "skill_score": 30.17,
+      "category_score": 100.0,
+      "experience_score": 80.0,
+      "location_score": 100.0,
+      "cosine_similarity": 0.0025,
+      "matched_skills": [
+        "python"
+      ],
+      "missing_skills": [],
+      "salary_reference": "USD 90-90 hourly",
+      "quality_level": "High",
+      "explanation": "综合匹配分 58.60。技能相似度分项 30.17，命中技能：python；主要缺失技能：暂无主要技能缺口。岗位类别分项 100.00，经验分项 80.00，地点分项 100.00。薪资仅作参考：USD 90-90 hourly。",
+      "quality_score": 87.0
+    }
+  ],
+  "explanation": "本地规则路由已完成工具调用；未调用外部大模型，Function Calling schema 仅作为接口契约。"
+}

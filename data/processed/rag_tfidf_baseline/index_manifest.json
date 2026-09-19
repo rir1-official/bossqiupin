@@ -1,0 +1,19 @@
+{
+  "method": "TF-IDF cosine retrieval baseline",
+  "records": 12000,
+  "feature_count": 20000,
+  "return_fields": [
+    "job_id",
+    "job_title",
+    "company_name",
+    "broad_category",
+    "skills_normalized",
+    "district",
+    "salary_raw",
+    "source_url",
+    "crawl_time",
+    "data_origin"
+  ],
+  "source": "data/processed/jobs_cleaned.parquet",
+  "semantic_embedding": false
+}

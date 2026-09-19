@@ -1,0 +1,174 @@
+{
+  "experiment": "FAISS + BAAI/bge-small-zh-v1.5 semantic retrieval",
+  "evaluated_at": "2026-09-11T14:11:20.251647+00:00",
+  "top_k": 3,
+  "question_count": 12,
+  "retrieved_result_count": 36,
+  "query_hit_rate_at_3": 0.5,
+  "macro_precision_at_3": 0.3333333333333333,
+  "macro_recall_at_3": 0.0055266317891836565,
+  "macro_mrr_at_3": 0.4444444444444444,
+  "macro_ndcg_at_3": 0.35288661358428147,
+  "source_trace_coverage": 1.0,
+  "gold_definition": "reproducible structured conditions over title, category, normalized skills and district",
+  "top_k_sensitivity": [
+    {
+      "top_k": 1,
+      "hit_rate": 0.4166666666666667,
+      "macro_precision": 0.4166666666666667,
+      "macro_recall": 0.0026432442430457705,
+      "macro_mrr": 0.4166666666666667,
+      "macro_ndcg": 0.4166666666666667
+    },
+    {
+      "top_k": 3,
+      "hit_rate": 0.5,
+      "macro_precision": 0.3333333333333333,
+      "macro_recall": 0.0055266317891836565,
+      "macro_mrr": 0.4444444444444444,
+      "macro_ndcg": 0.35288661358428147
+    },
+    {
+      "top_k": 5,
+      "hit_rate": 0.5833333333333334,
+      "macro_precision": 0.2833333333333334,
+      "macro_recall": 0.007353666735985596,
+      "macro_mrr": 0.46527777777777773,
+      "macro_ndcg": 0.3121865271199211
+    }
+  ],
+  "per_question": [
+    {
+      "question_id": "Q01",
+      "question_type": "基础查询",
+      "gold_count": 363,
+      "hit_at_k": 1.0,
+      "precision_at_k": 0.3333333333333333,
+      "recall_at_k": 0.0027548209366391185,
+      "mrr_at_k": 1.0,
+      "ndcg_at_k": 0.46927872602275644,
+      "relevant_in_top_k": 1
+    },
+    {
+      "question_id": "Q02",
+      "question_type": "细节查询",
+      "gold_count": 209,
+      "hit_at_k": 1.0,
+      "precision_at_k": 0.6666666666666666,
+      "recall_at_k": 0.009569377990430622,
+      "mrr_at_k": 1.0,
+      "ndcg_at_k": 0.7653606369886217,
+      "relevant_in_top_k": 2
+    },
+    {
+      "question_id": "Q03",
+      "question_type": "基础查询",
+      "gold_count": 168,
+      "hit_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "mrr_at_k": 0.0,
+      "ndcg_at_k": 0.0,
+      "relevant_in_top_k": 0
+    },
+    {
+      "question_id": "Q04",
+      "question_type": "细节查询",
+      "gold_count": 80,
+      "hit_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "mrr_at_k": 0.0,
+      "ndcg_at_k": 0.0,
+      "relevant_in_top_k": 0
+    },
+    {
+      "question_id": "Q05",
+      "question_type": "模糊查询",
+      "gold_count": 303,
+      "hit_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "mrr_at_k": 0.0,
+      "ndcg_at_k": 0.0,
+      "relevant_in_top_k": 0
+    },
+    {
+      "question_id": "Q06",
+      "question_type": "细节查询",
+      "gold_count": 51,
+      "hit_at_k": 1.0,
+      "precision_at_k": 0.6666666666666666,
+      "recall_at_k": 0.0392156862745098,
+      "mrr_at_k": 1.0,
+      "ndcg_at_k": 0.7653606369886217,
+      "relevant_in_top_k": 2
+    },
+    {
+      "question_id": "Q07",
+      "question_type": "模糊查询",
+      "gold_count": 939,
+      "hit_at_k": 1.0,
+      "precision_at_k": 0.3333333333333333,
+      "recall_at_k": 0.0010649627263045794,
+      "mrr_at_k": 0.3333333333333333,
+      "ndcg_at_k": 0.23463936301137822,
+      "relevant_in_top_k": 1
+    },
+    {
+      "question_id": "Q08",
+      "question_type": "基础查询",
+      "gold_count": 1276,
+      "hit_at_k": 1.0,
+      "precision_at_k": 1.0,
+      "recall_at_k": 0.0023510971786833857,
+      "mrr_at_k": 1.0,
+      "ndcg_at_k": 1.0,
+      "relevant_in_top_k": 3
+    },
+    {
+      "question_id": "Q09",
+      "question_type": "易混淆岗位查询",
+      "gold_count": 96,
+      "hit_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "mrr_at_k": 0.0,
+      "ndcg_at_k": 0.0,
+      "relevant_in_top_k": 0
+    },
+    {
+      "question_id": "Q10",
+      "question_type": "易混淆岗位查询",
+      "gold_count": 284,
+      "hit_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "mrr_at_k": 0.0,
+      "ndcg_at_k": 0.0,
+      "relevant_in_top_k": 0
+    },
+    {
+      "question_id": "Q11",
+      "question_type": "细节查询",
+      "gold_count": 236,
+      "hit_at_k": 0.0,
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "mrr_at_k": 0.0,
+      "ndcg_at_k": 0.0,
+      "relevant_in_top_k": 0
+    },
+    {
+      "question_id": "Q12",
+      "question_type": "模糊查询",
+      "gold_count": 264,
+      "hit_at_k": 1.0,
+      "precision_at_k": 1.0,
+      "recall_at_k": 0.011363636363636364,
+      "mrr_at_k": 1.0,
+      "ndcg_at_k": 1.0,
+      "relevant_in_top_k": 3
+    }
+  ]
+}

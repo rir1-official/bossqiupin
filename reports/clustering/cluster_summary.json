@@ -1,0 +1,580 @@
+[
+  {
+    "cluster_id": 0,
+    "business_name": "云平台与 DevOps 工程岗位",
+    "job_count": 3206,
+    "share": 0.2672,
+    "dominant_broad_category": "Engineering",
+    "category_distribution": {
+      "Engineering": 1642,
+      "Data Science": 988,
+      "Other": 108,
+      "Sales": 103,
+      "Design": 69
+    },
+    "top_job_categories": [
+      {
+        "category": "Developer",
+        "count": 1420
+      },
+      {
+        "category": "Data Science",
+        "count": 254
+      },
+      {
+        "category": "Design",
+        "count": 92
+      },
+      {
+        "category": "Sales",
+        "count": 74
+      },
+      {
+        "category": "Developer, Data Science",
+        "count": 61
+      },
+      {
+        "category": "Operations",
+        "count": 56
+      },
+      {
+        "category": "Product",
+        "count": 37
+      },
+      {
+        "category": "Hardware Engineer",
+        "count": 36
+      }
+    ],
+    "top_terms": [
+      "engineer",
+      "engineering",
+      "developer",
+      "software",
+      "senior",
+      "software engineer",
+      "development",
+      "cloud",
+      "engineer senior",
+      "design"
+    ],
+    "top_titles": [
+      {
+        "title": "Senior Software Engineer",
+        "count": 27
+      },
+      {
+        "title": "Senior Python Data Scraping Engineer (Freelance)",
+        "count": 25
+      },
+      {
+        "title": "Freelance Agent Evaluation Engineer",
+        "count": 22
+      },
+      {
+        "title": "Freelance Presentation Designer",
+        "count": 22
+      },
+      {
+        "title": "React Engineer - Remote, Latin America",
+        "count": 19
+      },
+      {
+        "title": "Competitive Programming Expert - Freelance AI Trainer",
+        "count": 19
+      },
+      {
+        "title": "Initiativbewerbung",
+        "count": 17
+      },
+      {
+        "title": "Freelance Annotator (English) - AI Trainer",
+        "count": 16
+      },
+      {
+        "title": "AI Trainer - Freelance Data Annotator",
+        "count": 16
+      },
+      {
+        "title": "Senior Data Engineer",
+        "count": 15
+      }
+    ],
+    "top_skills": [
+      {
+        "skill": "software engineer",
+        "count": 669
+      },
+      {
+        "skill": "backend development",
+        "count": 306
+      },
+      {
+        "skill": "fullstack development",
+        "count": 243
+      },
+      {
+        "skill": "cloud engineer",
+        "count": 198
+      },
+      {
+        "skill": "data engineering",
+        "count": 194
+      },
+      {
+        "skill": "backend engineering",
+        "count": 185
+      },
+      {
+        "skill": "platform engineering",
+        "count": 180
+      },
+      {
+        "skill": "devops engineer",
+        "count": 166
+      },
+      {
+        "skill": "frontend development",
+        "count": 159
+      },
+      {
+        "skill": "backend engineer",
+        "count": 146
+      }
+    ],
+    "interpretation": "该类包含 3,206 个岗位，主要属于 Engineering。 高频文本特征包括：engineer、engineering、developer、software、senior。 名称依据主类别与高权重词生成，便于业务阅读。"
+  },
+  {
+    "cluster_id": 1,
+    "business_name": "销售与业务拓展岗位",
+    "job_count": 8070,
+    "share": 0.6725,
+    "dominant_broad_category": "Sales",
+    "category_distribution": {
+      "Sales": 1682,
+      "Operations": 1037,
+      "Engineering": 924,
+      "Data Science": 860,
+      "Healthcare": 749
+    },
+    "top_job_categories": [
+      {
+        "category": "Sales",
+        "count": 1209
+      },
+      {
+        "category": "Customer Service",
+        "count": 549
+      },
+      {
+        "category": "Marketing",
+        "count": 408
+      },
+      {
+        "category": "Operations",
+        "count": 400
+      },
+      {
+        "category": "Product",
+        "count": 283
+      },
+      {
+        "category": "Human Resources",
+        "count": 259
+      },
+      {
+        "category": "Finance",
+        "count": 253
+      },
+      {
+        "category": "Healthcare",
+        "count": 172
+      }
+    ],
+    "top_terms": [
+      "sales",
+      "manager",
+      "management",
+      "business",
+      "customer",
+      "support",
+      "specialist",
+      "operations",
+      "skills",
+      "marketing"
+    ],
+    "top_titles": [
+      {
+        "title": "Product Manager",
+        "count": 25
+      },
+      {
+        "title": "Sales Development Representative",
+        "count": 23
+      },
+      {
+        "title": "Business Development Representative",
+        "count": 20
+      },
+      {
+        "title": "Account Executive",
+        "count": 20
+      },
+      {
+        "title": "Account Manager",
+        "count": 18
+      },
+      {
+        "title": "Customer Success Manager",
+        "count": 18
+      },
+      {
+        "title": "Project Manager",
+        "count": 17
+      },
+      {
+        "title": "Business Development Manager - Global, Remote (UNCAPPED COMMISSIONS)",
+        "count": 15
+      },
+      {
+        "title": "QuickBooks Financial Controller",
+        "count": 14
+      },
+      {
+        "title": "Enterprise Account Executive",
+        "count": 13
+      }
+    ],
+    "top_skills": [
+      {
+        "skill": "sales",
+        "count": 672
+      },
+      {
+        "skill": "business development",
+        "count": 599
+      },
+      {
+        "skill": "b2b sales",
+        "count": 456
+      },
+      {
+        "skill": "account management",
+        "count": 435
+      },
+      {
+        "skill": "customer service",
+        "count": 434
+      },
+      {
+        "skill": "digital marketing",
+        "count": 286
+      },
+      {
+        "skill": "operations",
+        "count": 284
+      },
+      {
+        "skill": "enterprise sales",
+        "count": 283
+      },
+      {
+        "skill": "project management",
+        "count": 253
+      },
+      {
+        "skill": "account executive",
+        "count": 244
+      }
+    ],
+    "interpretation": "该类包含 8,070 个岗位，主要属于 Sales。 高频文本特征包括：sales、manager、management、business、customer。 名称依据主类别与高权重词生成，便于业务阅读。"
+  },
+  {
+    "cluster_id": 2,
+    "business_name": "企业应用与技术创新岗位",
+    "job_count": 243,
+    "share": 0.0203,
+    "dominant_broad_category": "Engineering",
+    "category_distribution": {
+      "Engineering": 180,
+      "Data Science": 60,
+      "Sales": 3
+    },
+    "top_job_categories": [
+      {
+        "category": "Developer",
+        "count": 135
+      },
+      {
+        "category": "Data Science",
+        "count": 12
+      },
+      {
+        "category": "Data Science, Developer",
+        "count": 4
+      },
+      {
+        "category": "Hardware Engineer",
+        "count": 4
+      },
+      {
+        "category": "Hardware Engineer, Developer",
+        "count": 3
+      },
+      {
+        "category": "Developer, Operations",
+        "count": 3
+      },
+      {
+        "category": "Developer, Hardware Engineer",
+        "count": 2
+      },
+      {
+        "category": "Operations",
+        "count": 2
+      }
+    ],
+    "top_terms": [
+      "vision technologies",
+      "bright vision",
+      "bright",
+      "teck",
+      "bv teck",
+      "holders",
+      "employment eeo",
+      "engineer",
+      "termination",
+      "transfer"
+    ],
+    "top_titles": [
+      {
+        "title": "AI Innovation Engineer",
+        "count": 1
+      },
+      {
+        "title": "SAP UX Developer",
+        "count": 1
+      },
+      {
+        "title": "Windchill Middleware Developer",
+        "count": 1
+      },
+      {
+        "title": "Distributed Systems Architect",
+        "count": 1
+      },
+      {
+        "title": "Integration Platform Developer",
+        "count": 1
+      },
+      {
+        "title": "PLM Integration Engineer",
+        "count": 1
+      },
+      {
+        "title": "Boomi Middleware Engineer",
+        "count": 1
+      },
+      {
+        "title": "Test Automation Engineer",
+        "count": 1
+      },
+      {
+        "title": "Machine Learning Infrastructure Engineer",
+        "count": 1
+      },
+      {
+        "title": "PeopleSoft Platform Developer",
+        "count": 1
+      }
+    ],
+    "top_skills": [
+      {
+        "skill": "software engineer",
+        "count": 33
+      },
+      {
+        "skill": "devops engineer",
+        "count": 23
+      },
+      {
+        "skill": "cloud engineer",
+        "count": 21
+      },
+      {
+        "skill": "platform engineering",
+        "count": 20
+      },
+      {
+        "skill": "backend engineer",
+        "count": 19
+      },
+      {
+        "skill": "site reliability engineering",
+        "count": 17
+      },
+      {
+        "skill": "data engineering",
+        "count": 15
+      },
+      {
+        "skill": "integration developer",
+        "count": 15
+      },
+      {
+        "skill": "cloud architecture",
+        "count": 13
+      },
+      {
+        "skill": "developer",
+        "count": 13
+      }
+    ],
+    "interpretation": "该类包含 243 个岗位，主要属于 Engineering。 高频文本特征包括：vision technologies、bright vision、bright、teck、bv teck。 名称依据主类别与高权重词生成，便于业务阅读。"
+  },
+  {
+    "cluster_id": 3,
+    "business_name": "机器学习与人工智能岗位",
+    "job_count": 481,
+    "share": 0.0401,
+    "dominant_broad_category": "Data Science",
+    "category_distribution": {
+      "Data Science": 291,
+      "Engineering": 46,
+      "Legal": 36,
+      "Operations": 25,
+      "Marketing": 21
+    },
+    "top_job_categories": [
+      {
+        "category": "Developer",
+        "count": 61
+      },
+      {
+        "category": "Finance",
+        "count": 27
+      },
+      {
+        "category": "Marketing",
+        "count": 21
+      },
+      {
+        "category": "Data Science",
+        "count": 19
+      },
+      {
+        "category": "Content Creator",
+        "count": 10
+      },
+      {
+        "category": "Sales",
+        "count": 8
+      },
+      {
+        "category": "Product",
+        "count": 7
+      },
+      {
+        "category": "Customer Service, Developer",
+        "count": 7
+      }
+    ],
+    "top_terms": [
+      "ai interview",
+      "interview",
+      "resume",
+      "specialist",
+      "ai research",
+      "complete",
+      "evaluation",
+      "mercor",
+      "application steps",
+      "larry summers"
+    ],
+    "top_titles": [
+      {
+        "title": "Business Ops Analyst - Fully Remote | Upto $160/hr",
+        "count": 9
+      },
+      {
+        "title": "AI Safety Practitioner - Fully Remote | Upto $70/hr",
+        "count": 9
+      },
+      {
+        "title": "Customer Support Expert - Fully Remote | Upto $160/hr",
+        "count": 8
+      },
+      {
+        "title": "AI Safety Specialist - Remote | Upto $84/hr",
+        "count": 8
+      },
+      {
+        "title": "GTM Analyst - Fully Remote | Upto $160/hr",
+        "count": 8
+      },
+      {
+        "title": "Marketing Specialist - Fully Remote | Upto $160/hr",
+        "count": 8
+      },
+      {
+        "title": "Grant Writing Specialist - Fully Remote | Upto $160/hr",
+        "count": 7
+      },
+      {
+        "title": "Business Analyst - Fully Remote | Upto $160/hr",
+        "count": 7
+      },
+      {
+        "title": "Program Manager - Fully Remote | Upto $160/hr",
+        "count": 6
+      },
+      {
+        "title": "Academic Evaluator - Fully Remote | Upto $160/hr",
+        "count": 6
+      }
+    ],
+    "top_skills": [
+      {
+        "skill": "ai safety specialist",
+        "count": 65
+      },
+      {
+        "skill": "document review",
+        "count": 61
+      },
+      {
+        "skill": "ai safety",
+        "count": 58
+      },
+      {
+        "skill": "ai evaluation",
+        "count": 57
+      },
+      {
+        "skill": "quality assurance",
+        "count": 55
+      },
+      {
+        "skill": "trust and safety",
+        "count": 54
+      },
+      {
+        "skill": "ai safety expert",
+        "count": 45
+      },
+      {
+        "skill": "ai safety researcher",
+        "count": 43
+      },
+      {
+        "skill": "ai safety practitioner",
+        "count": 40
+      },
+      {
+        "skill": "content moderation",
+        "count": 37
+      }
+    ],
+    "interpretation": "该类包含 481 个岗位，主要属于 Data Science。 高频文本特征包括：ai interview、interview、resume、specialist、ai research。 名称依据主类别与高权重词生成，便于业务阅读。"
+  }
+]

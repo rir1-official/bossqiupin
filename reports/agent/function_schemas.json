@@ -1,0 +1,137 @@
+[
+  {
+    "name": "search_jobs",
+    "description": "按关键词、技能、类别和地区筛选本地岗位数据",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string"
+        },
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "category": {
+          "type": "string"
+        },
+        "district": {
+          "type": "string"
+        },
+        "top_k": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20
+        }
+      },
+      "required": [
+        "query"
+      ]
+    }
+  },
+  {
+    "name": "score_job",
+    "description": "查询岗位信息质量分和质量等级",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "job_id": {
+          "type": "string"
+        },
+        "job_title": {
+          "type": "string"
+        }
+      },
+      "oneOf": [
+        {
+          "required": [
+            "job_id"
+          ]
+        },
+        {
+          "required": [
+            "job_title"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "match_resume",
+    "description": "使用既有 TF-IDF + 余弦相似度公式计算人岗匹配",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "resume_text": {
+          "type": "string"
+        },
+        "top_k": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20
+        },
+        "resume_category": {
+          "type": "string"
+        },
+        "resume_years": {
+          "type": "number"
+        },
+        "preferred_locations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "resume_text"
+      ]
+    }
+  },
+  {
+    "name": "cluster_summary",
+    "description": "解释指定岗位聚类的业务名称、技能、标题和类别",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "cluster_id": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  {
+    "name": "retrieve_jobs",
+    "description": "使用本地 FAISS + BGE 岗位知识库召回 Top-k 岗位并保留来源",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "question": {
+          "type": "string"
+        },
+        "top_k": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20
+        },
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "category": {
+          "type": "string"
+        },
+        "district": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "question"
+      ]
+    }
+  }
+]

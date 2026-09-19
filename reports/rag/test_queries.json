@@ -1,0 +1,543 @@
+[
+  {
+    "question_id": "Q01",
+    "question_type": "基础查询",
+    "question": "想找同时要求 Python 和 SQL 的远程数据分析岗位。",
+    "rationale": "验证两个明确技术技能与数据岗位类别的联合召回。",
+    "gold_count": 363,
+    "gold_job_id_sample": [
+      "009e4fd2d5f8e5bd4dd0d557",
+      "00e2734792590265109c2754",
+      "012a3b48e5b70c26fd6019d8",
+      "0318ed4441d9e0978758d90b",
+      "03b6ff3878d0614e7040b378",
+      "0407e1d5c361559108d9726a",
+      "04537923ddbe4e52487a324c",
+      "048ad4d61cefeea97a7f3a0b",
+      "050b8f3f686a96c8d4bf94b2",
+      "0529489df5e591608467dbdb",
+      "05702d34a5db357696b1bcd7",
+      "0718d5c56ec40a0f70a02efa",
+      "0840b5f053d523da71448fac",
+      "08be0c90d41ddf4b3332310a",
+      "09f40e4017b31c2e6550810f",
+      "0a8f145d1a7bd3776fb6a2d4",
+      "0aa083c3374ab338ae1bf07c",
+      "0d2b665ea17e773feed5c27f",
+      "0d9f3393807c2dc2ac214b83",
+      "0e0b40a10b98efada477fcd3"
+    ],
+    "gold_rules": {
+      "must_all": [
+        "python",
+        "sql"
+      ],
+      "must_any": [],
+      "broad_categories": [
+        "Data Science"
+      ],
+      "districts": [],
+      "exclude_any": []
+    }
+  },
+  {
+    "question_id": "Q02",
+    "question_type": "细节查询",
+    "question": "需要会 AWS、Docker 和 Kubernetes 的远程 DevOps 或云平台岗位。",
+    "rationale": "验证三个基础设施技能同时出现时的精确召回。",
+    "gold_count": 209,
+    "gold_job_id_sample": [
+      "00379e1ff1f51c73e61b8753",
+      "009e4fd2d5f8e5bd4dd0d557",
+      "01406b139b6446c6d71a8272",
+      "05d01fd018fa30bf8838b930",
+      "07bc9bcd77408da2c3d95ed0",
+      "08be0c90d41ddf4b3332310a",
+      "091c9baebaf0259ae150f214",
+      "0be50433daa5785aecec87ce",
+      "0c38a73999d253c653456701",
+      "0e04bfa19a0305f28f69d234",
+      "0e9655586dca9e1720c575b5",
+      "1120d7f91309f1ae7891274b",
+      "11e5eec09f53dda7f7370f2a",
+      "13b528af73708314de6a6eba",
+      "1469e0f018983eaf84e8077a",
+      "15bb4926010f2067f522da44",
+      "177b983163ce969b9ca12c33",
+      "17c1e1a97c8f9dee2142f3c3",
+      "188cee8008f6a7c80c57a35d",
+      "1aa4fc9757ac55fad3dfd8e4"
+    ],
+    "gold_rules": {
+      "must_all": [
+        "aws",
+        "docker",
+        "kubernetes"
+      ],
+      "must_any": [
+        "devops",
+        "cloud",
+        "platform",
+        "site reliability"
+      ],
+      "broad_categories": [
+        "Engineering",
+        "Data Science"
+      ],
+      "districts": [],
+      "exclude_any": []
+    }
+  },
+  {
+    "question_id": "Q03",
+    "question_type": "基础查询",
+    "question": "寻找 React 和 TypeScript 技术栈的远程前端开发岗位。",
+    "rationale": "验证主流前端框架和语言组合。",
+    "gold_count": 168,
+    "gold_job_id_sample": [
+      "0082e52784124a483ed9f4f6",
+      "00f0231a38b77ca5685bbd3f",
+      "01305b1e7ed58252ad366b25",
+      "06bfb11a995399c69170a011",
+      "070467ceaab68f86a28fc9bc",
+      "0730de42abc47465d983dacd",
+      "07cfac10de8c215b4766f011",
+      "09b5cc35b83476b6bc3e46ed",
+      "0a36e65342d7f5b4681d2305",
+      "0be50433daa5785aecec87ce",
+      "0c9632740580dafd1b66740a",
+      "0cf6503ec18619498c118fa0",
+      "0e404379d4191fe760fe16a6",
+      "0e704e8e0901e3e7849d05ec",
+      "0e71678be76839bbcdb92d58",
+      "0e83e35dca59c0c30dd19fd4",
+      "0ec0b2b8a01fa514bea1577f",
+      "1097073da15ac935c7dbb5de",
+      "10e27e8ad41cbdee09fd9e5c",
+      "132c306a218495c9ae9a8716"
+    ],
+    "gold_rules": {
+      "must_all": [
+        "react",
+        "typescript"
+      ],
+      "must_any": [
+        "frontend",
+        "front end",
+        "full stack",
+        "fullstack"
+      ],
+      "broad_categories": [
+        "Engineering"
+      ],
+      "districts": [],
+      "exclude_any": []
+    }
+  },
+  {
+    "question_id": "Q04",
+    "question_type": "细节查询",
+    "question": "想找需要 Excel 和 Tableau 的商业分析或业务分析岗位。",
+    "rationale": "验证办公分析工具与业务分析角色的联合条件。",
+    "gold_count": 80,
+    "gold_job_id_sample": [
+      "0260b412d4294407a800caeb",
+      "0d0018f6a2d6aba35a90371d",
+      "12c2e51d2e9f2c640f55b42e",
+      "1e44517d4e53c5ec0f4343af",
+      "1f392f426500d6a2cf45181a",
+      "20e8f547fd28f8253aa33eed",
+      "220b2f982e0ad555227ec4a7",
+      "245af44821951021a5519dbc",
+      "2da676b6434822235cf58942",
+      "2eef094b318ba0160a41112c",
+      "2f483bc1e33dab2c6a73e3a8",
+      "334c3f0f89b0d47aaeda79cb",
+      "38120e1f7ddbaca88dbe6860",
+      "3da7c7e53d8fb24d8365a8e3",
+      "41f69ca55b7314e7bf743e85",
+      "474c2d416bc0165abd117cb8",
+      "496470b1ff370e3063ec0dc7",
+      "4b9175cba76d8d90d97bbe5a",
+      "4fab92ce3d32e24afbfcebc4",
+      "50c5a94d38fbf07491cab131"
+    ],
+    "gold_rules": {
+      "must_all": [
+        "excel",
+        "tableau"
+      ],
+      "must_any": [
+        "business analyst",
+        "business analysis",
+        "business intelligence",
+        "data analyst"
+      ],
+      "broad_categories": [],
+      "districts": [],
+      "exclude_any": []
+    }
+  },
+  {
+    "question_id": "Q05",
+    "question_type": "模糊查询",
+    "question": "有哪些负责人工智能模型评估、质量审核或安全测试的远程岗位？",
+    "rationale": "用中文语义表达检索 AI evaluation、model evaluation 等英文岗位概念。",
+    "gold_count": 303,
+    "gold_job_id_sample": [
+      "017029d9a8aec7c23e3c42f9",
+      "033f43bdaa9b37c1f2bf3e62",
+      "04537923ddbe4e52487a324c",
+      "050b8f3f686a96c8d4bf94b2",
+      "056ca1b25c970618e230ac8a",
+      "06f66573f5747f158438ffb4",
+      "072460e89367a67afcf42a3a",
+      "0796897512fb39ea95df46df",
+      "08d374cc571bfbf3d61c1bf2",
+      "08edcfc802d32891a6a6c466",
+      "0951ed114b4fee52d1dfca3d",
+      "0990e0bba57eed3e89a1fcf3",
+      "09f1bf0e40d273bf9f4087d9",
+      "0a08539c69f9341dd3a81ca7",
+      "0b7c114e32e9d3d7cb07dc4d",
+      "0ccbe4b48dfd204866a7f545",
+      "0d33148e611e679fc1325880",
+      "0d8d4d35269b9a592b7c0bb9",
+      "0e172d5ae40b1b1f90638a63",
+      "0e65218b164b689c78183d86"
+    ],
+    "gold_rules": {
+      "must_all": [],
+      "must_any": [
+        "ai evaluation",
+        "model evaluation",
+        "model evaluator",
+        "ai safety",
+        "model quality"
+      ],
+      "broad_categories": [
+        "Data Science",
+        "Engineering",
+        "Other"
+      ],
+      "districts": [],
+      "exclude_any": []
+    }
+  },
+  {
+    "question_id": "Q06",
+    "question_type": "细节查询",
+    "question": "寻找使用 PostgreSQL 的远程数据工程岗位。",
+    "rationale": "验证具体数据库技术和数据工程角色。",
+    "gold_count": 51,
+    "gold_job_id_sample": [
+      "03b6ff3878d0614e7040b378",
+      "03fdad9fc63b605ad23203a3",
+      "05702d34a5db357696b1bcd7",
+      "09f40e4017b31c2e6550810f",
+      "0aa083c3374ab338ae1bf07c",
+      "0d9f3393807c2dc2ac214b83",
+      "1469e0f018983eaf84e8077a",
+      "1c2e40c78b7b7c932659add8",
+      "2170ade3ccccc76a9c39f4ef",
+      "21b3b5098bf809e35e1d4e58",
+      "2627de0458c8abe229569499",
+      "2b58b43041005197ade966d9",
+      "2f2cff67400dd3cfec7dd22b",
+      "3460c1127bbe9cde35d8d5c2",
+      "36a59311f24ee749e867abb3",
+      "3faffdc2c884e0709c8e99e9",
+      "418917f0ae1efb6556c7dc19",
+      "4284644f26275b0b41361037",
+      "43c49962b561e964f354ac13",
+      "4c4a1773a7e098ff870a758a"
+    ],
+    "gold_rules": {
+      "must_all": [
+        "postgresql"
+      ],
+      "must_any": [
+        "data engineer",
+        "data engineering",
+        "data platform"
+      ],
+      "broad_categories": [
+        "Data Science",
+        "Engineering"
+      ],
+      "districts": [],
+      "exclude_any": []
+    }
+  },
+  {
+    "question_id": "Q07",
+    "question_type": "模糊查询",
+    "question": "希望找维护客户关系、处理客户问题并提升续约体验的远程岗位。",
+    "rationale": "不直接给出岗位标题，验证 Customer Success 和 Customer Support 的语义召回。",
+    "gold_count": 939,
+    "gold_job_id_sample": [
+      "00b2eae8dc82f254dea94022",
+      "01e8b9f553725437f3b9422d",
+      "020687f308668318e0d5eda6",
+      "02393e24fda7a39f3b247811",
+      "0251c89297c3a2b63921ca8c",
+      "02634b195dd2efc5ac96a519",
+      "0270dbbb808e597a74b0470c",
+      "027aedc7bb134527846e5bba",
+      "033b616ca0e29e6c03a5ec94",
+      "037b857dae073dc1e314b74e",
+      "038090b78ac055d2546dac60",
+      "039470d31da1e1abc28e7a2e",
+      "03cea28f37b04580477540b0",
+      "046eb5f2945eddb34f5d9f26",
+      "049d8002d41ab952e987f972",
+      "04ae0a36dc3843be3741b47a",
+      "051f8a75c2338c18a7e453b7",
+      "0560a4f0380aa3ac088cbec4",
+      "0592f47ed22afad2db8d43ca",
+      "0593b1607d581d9f0a885181"
+    ],
+    "gold_rules": {
+      "must_all": [],
+      "must_any": [
+        "customer success",
+        "customer support",
+        "client success",
+        "technical support"
+      ],
+      "broad_categories": [
+        "Customer Service",
+        "Sales",
+        "Operations"
+      ],
+      "districts": [],
+      "exclude_any": []
+    }
+  },
+  {
+    "question_id": "Q08",
+    "question_type": "基础查询",
+    "question": "寻找销售拓展或客户账户管理方向的远程岗位。",
+    "rationale": "验证 Sales 与 Account Management 近邻业务角色。",
+    "gold_count": 1276,
+    "gold_job_id_sample": [
+      "000be624729c457d524f14d4",
+      "0079be739020a0276dfcd4cb",
+      "00a44c2a93c4aeb0982e46bb",
+      "00b2eae8dc82f254dea94022",
+      "00b39a8d6be1851cff1a88de",
+      "00de28389bef4e48ecb1d501",
+      "00df6dca6157323a060a4275",
+      "011e7f4a69cfd9c512328c10",
+      "0127c443324159c44f3b96a3",
+      "014b67b4b8fc3e9a49239b80",
+      "017336776e7c6a37d7f3ca52",
+      "01cb4986afc536106ea9c5d0",
+      "020687f308668318e0d5eda6",
+      "022b615ee85e42c6db65983c",
+      "02393e24fda7a39f3b247811",
+      "0251c89297c3a2b63921ca8c",
+      "025303c556e96d15ff26c601",
+      "027aedc7bb134527846e5bba",
+      "02e7ec1d230ad1f4da1cdab8",
+      "0361335937eeea6a82fe6dd0"
+    ],
+    "gold_rules": {
+      "must_all": [],
+      "must_any": [
+        "business development",
+        "account management",
+        "account manager",
+        "account executive"
+      ],
+      "broad_categories": [
+        "Sales"
+      ],
+      "districts": [],
+      "exclude_any": []
+    }
+  },
+  {
+    "question_id": "Q09",
+    "question_type": "易混淆岗位查询",
+    "question": "找产品经理岗位，不要 SEO、ASO 或纯营销增长岗位。",
+    "rationale": "区分 Product Management 与名称相近的 Marketing 产品推广岗位。",
+    "gold_count": 96,
+    "gold_job_id_sample": [
+      "034de38907be5b83d90511c5",
+      "04be88df02f502b9dbf66ffe",
+      "0af4a6c0083efa633cfd2255",
+      "12fc15d6773557e176e11c04",
+      "14bda6e449081c93b3e6ac15",
+      "17d056f322339c29e507cc40",
+      "1927e2433c20a27315a18df5",
+      "1a861ff409d6cd68af295120",
+      "1ba14fda25a011cf409b57ee",
+      "21188eec01f6bd4567e3def9",
+      "21922b1c01067fcc66f00358",
+      "224bead8e2da55fc6fff0bec",
+      "22756cacdbc4e3c93a355684",
+      "24ddfa77ccbee90031ef191e",
+      "28345b4a3c20ab3a0095d57d",
+      "28de57a4c384d3eb2faa66ce",
+      "2af38652b5ccf05d72526aa1",
+      "2c7875538f17b3c142164dcd",
+      "2cfd90d75542419692364170",
+      "2f496bba0907bd2255465d2d"
+    ],
+    "gold_rules": {
+      "must_all": [],
+      "must_any": [
+        "product manager",
+        "product management",
+        "product owner"
+      ],
+      "broad_categories": [
+        "Product"
+      ],
+      "districts": [],
+      "exclude_any": [
+        "seo",
+        "aso",
+        "growth marketing",
+        "performance marketing"
+      ]
+    }
+  },
+  {
+    "question_id": "Q10",
+    "question_type": "易混淆岗位查询",
+    "question": "寻找使用 Excel 做预算、财务规划或财务分析的岗位，不要普通数据分析师。",
+    "rationale": "区分 Finance 岗位和通用 Data Analyst 岗位。",
+    "gold_count": 284,
+    "gold_job_id_sample": [
+      "002f66404b53f8782b3d829b",
+      "00c599db515167d43c0cb8db",
+      "013169ad3dd80fc1502743f4",
+      "02468dcd207044bb10b29dee",
+      "04ce2d537df489bd39d878af",
+      "04ec1b678c63dce0635bd5d6",
+      "0618568521e0fcd3537b3283",
+      "06e878fde390b83c02142ad9",
+      "07fb3b5a415d12b38d2289b5",
+      "0885a97eae62f3f0d5893758",
+      "08e8eb44573292f8bca70f39",
+      "0a21b90bdf9bd61e38cdfe33",
+      "0a67e2345b27abfb45d9f4f0",
+      "0a989a0e317f78020761081d",
+      "0b3a0d74775c7a4d89e31e39",
+      "0c79ef53f4e0f2e27767237e",
+      "0e9de7a93f7f456c63c3e88a",
+      "0f46824bbd97341ea4a58a48",
+      "0f9e99cc7d40f892aed5e863",
+      "1095b7180dc4dc18721c0e31"
+    ],
+    "gold_rules": {
+      "must_all": [
+        "excel"
+      ],
+      "must_any": [
+        "finance",
+        "financial",
+        "budget",
+        "fp&a"
+      ],
+      "broad_categories": [
+        "Finance"
+      ],
+      "districts": [],
+      "exclude_any": [
+        "data analyst"
+      ]
+    }
+  },
+  {
+    "question_id": "Q11",
+    "question_type": "细节查询",
+    "question": "寻找面向美国地区、使用 Java 的远程后端工程岗位。",
+    "rationale": "验证技能、角色和地区三个维度的联合召回。",
+    "gold_count": 236,
+    "gold_job_id_sample": [
+      "005cce8a25b68377bb3b5f4c",
+      "00fa0332af04bfd12c2be426",
+      "012bbe2d15db7081060f47f5",
+      "0244ef1d7f29d8a2047cbf8a",
+      "02a48633800d42ab47be7ac7",
+      "03eb645917991283cc5f81ea",
+      "04a35391b483436b365a4821",
+      "05d01fd018fa30bf8838b930",
+      "066530cf94abdc03acb83a40",
+      "06fc459f72247422b50b71d6",
+      "070467ceaab68f86a28fc9bc",
+      "07bc9bcd77408da2c3d95ed0",
+      "08901264674c2be83cac671a",
+      "09bd1217e88f824a630b36cf",
+      "0a7c00b8b084cfd951bfab91",
+      "0aafa00dd9f1567811ca8172",
+      "0d06f96df4e4308209311541",
+      "0d2605927f3ede5ef5cfda8e",
+      "0dba4425c6b8eec69b44d537",
+      "0de76d2c8095fef5d381e6ca"
+    ],
+    "gold_rules": {
+      "must_all": [
+        "java"
+      ],
+      "must_any": [
+        "backend",
+        "back end",
+        "software engineer"
+      ],
+      "broad_categories": [
+        "Engineering"
+      ],
+      "districts": [
+        "United States"
+      ],
+      "exclude_any": []
+    }
+  },
+  {
+    "question_id": "Q12",
+    "question_type": "模糊查询",
+    "question": "想从事训练、部署和维护预测模型的远程机器学习工程工作。",
+    "rationale": "用职责描述检索 Machine Learning Engineering 角色。",
+    "gold_count": 264,
+    "gold_job_id_sample": [
+      "009e4fd2d5f8e5bd4dd0d557",
+      "00b8f0d157f1042256841230",
+      "00e2734792590265109c2754",
+      "0109689e90f47cea26636c05",
+      "012a3b48e5b70c26fd6019d8",
+      "028cb337aa3d02e224bf5114",
+      "04284b84de0c23b800c8b3f6",
+      "043abb3dac173105f61145b4",
+      "04537923ddbe4e52487a324c",
+      "0494dc2bbb541412938f36ef",
+      "051a177ab11e8120b37ca494",
+      "05702d34a5db357696b1bcd7",
+      "06f503eb67273c1a60febdeb",
+      "06f66573f5747f158438ffb4",
+      "08be0c90d41ddf4b3332310a",
+      "094ac88e167e5e5bc133670f",
+      "095d937469ee90c3414195e5",
+      "0990e0bba57eed3e89a1fcf3",
+      "0a015c114a170529e2e65961",
+      "0ae730e1a6a0e7d5db7cd843"
+    ],
+    "gold_rules": {
+      "must_all": [],
+      "must_any": [
+        "machine learning engineer",
+        "machine learning engineering",
+        "ml engineer",
+        "ai ml engineer"
+      ],
+      "broad_categories": [
+        "Data Science"
+      ],
+      "districts": [],
+      "exclude_any": []
+    }
+  }
+]

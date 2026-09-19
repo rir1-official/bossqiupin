@@ -1,0 +1,10 @@
+{
+  "test_question_count": 10,
+  "top_k": 3,
+  "criterion_hit_count": 9,
+  "criterion_hit_rate_percent": 90.0,
+  "metric_name": "预设条件可验证命中率",
+  "true_recall_rate": "未计算",
+  "reason": "没有人工相关性金标准，也没有完整的相关岗位全集；该比例仅检查每个问题的预设技能、类别或地区条件是否在Top-k中至少出现一条满足记录。",
+  "triple_csv": "reports/rag/question_answer_source_triples.csv"
+}

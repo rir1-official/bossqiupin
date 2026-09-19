@@ -1,0 +1,34 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: boss-qiupin-api:week3
+    command: ["uvicorn", "app.backend:app", "--host", "0.0.0.0", "--port", "8000"]
+    environment:
+      PYTHONPATH: /app/src
+      AGENT_PROTOCOL: auto
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=3)"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: boss-qiupin-frontend:week3
+    command: ["streamlit", "run", "frontend/streamlit_app.py", "--server.address", "0.0.0.0", "--server.port", "8501", "--server.headless", "true"]
+    environment:
+      API_URL: http://api:8000
+      FRONTEND_API_TIMEOUT: "180"
+      FRONTEND_REAL_AGENT_TIMEOUT: "150"
+    ports:
+      - "8501:8501"
+    depends_on:
+      api:
+        condition: service_healthy

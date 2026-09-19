@@ -1,0 +1,150 @@
+{
+  "generated_at": "2026-09-08T15:12:15.454585+00:00",
+  "source_directory": "data/raw/himalayas_api/2026-09-08",
+  "source_file_pattern": "remote_all_*.jsonl",
+  "historical_aggregate_excluded": "data/raw/jobs_all.jsonl",
+  "source_file_count": 600,
+  "raw_record_count": 12000,
+  "deduplicated_record_count": 12000,
+  "duplicate_count": 0,
+  "duplicate_rate": 0.0,
+  "dedupe_precedence": [
+    "source + job_id",
+    "source_url",
+    "title + company + city + salary + publish_date"
+  ],
+  "missing_before": {
+    "job_id": 0,
+    "job_title": 0,
+    "company_name": 0,
+    "city": 0,
+    "district": 226,
+    "salary_raw": 6815,
+    "experience_raw": 0,
+    "education": 12000,
+    "publish_date": 0,
+    "job_description": 0,
+    "industry": 12000,
+    "company_type": 12000,
+    "company_size": 12000,
+    "skills": 0,
+    "job_category": 0,
+    "longitude": 12000,
+    "latitude": 12000,
+    "source": 0,
+    "source_url": 0,
+    "crawl_time": 0,
+    "data_origin": 0
+  },
+  "missing_after": {
+    "job_id": 0,
+    "job_title": 0,
+    "company_name": 0,
+    "city": 0,
+    "district": 226,
+    "salary_raw": 6815,
+    "experience_raw": 0,
+    "education": 12000,
+    "publish_date": 0,
+    "job_description": 0,
+    "industry": 12000,
+    "company_type": 12000,
+    "company_size": 12000,
+    "skills": 0,
+    "job_category": 0,
+    "longitude": 12000,
+    "latitude": 12000,
+    "source": 0,
+    "source_url": 0,
+    "crawl_time": 0,
+    "data_origin": 0
+  },
+  "field_types_before": {
+    "job_id": [
+      "str"
+    ],
+    "job_title": [
+      "str"
+    ],
+    "company_name": [
+      "str"
+    ],
+    "city": [
+      "str"
+    ],
+    "district": [
+      "str"
+    ],
+    "salary_raw": [
+      "str"
+    ],
+    "experience_raw": [
+      "str"
+    ],
+    "education": [
+      "str"
+    ],
+    "publish_date": [
+      "str"
+    ],
+    "job_description": [
+      "str"
+    ],
+    "industry": [
+      "str"
+    ],
+    "company_type": [
+      "str"
+    ],
+    "company_size": [
+      "str"
+    ],
+    "skills": [
+      "str"
+    ],
+    "job_category": [
+      "str"
+    ],
+    "longitude": [
+      "str"
+    ],
+    "latitude": [
+      "str"
+    ],
+    "source": [
+      "str"
+    ],
+    "source_url": [
+      "str"
+    ],
+    "crawl_time": [
+      "str"
+    ],
+    "data_origin": [
+      "str"
+    ]
+  },
+  "salary_parse_status": {
+    "missing": 6815,
+    "parsed": 5185
+  },
+  "salary_outlier_count": 31,
+  "experience_parse_status": {
+    "mapped": 12000
+  },
+  "quality_level_distribution": {
+    "Medium": 5855,
+    "High": 6071,
+    "Low": 74
+  },
+  "quality_label_definition": "quality_label=1 when deterministic information-quality score >= 80/100",
+  "winsorization": {
+    "usd_p01": 12480.0,
+    "usd_p99": 314850.0
+  },
+  "invariants": {
+    "all_city_remote": true,
+    "all_trace_fields_present": true,
+    "effective_records_at_least_10000": true
+  }
+}
