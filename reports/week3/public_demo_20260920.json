@@ -1,0 +1,9 @@
+{
+  "url": "https://mesa-clip-weight-fleece.trycloudflare.com",
+  "status_code": 200,
+  "checked_at": "2026-09-20T00:00:00+08:00",
+  "provider": "Cloudflare Quick Tunnel",
+  "target": "local Docker frontend port 8501",
+  "is_permanent_cloud_hosting": false,
+  "note": "答辩临时公网演示地址；依赖本机 Docker Compose 与 tmp/cloudflared/cloudflared 持续运行。"
+}

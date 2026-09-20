@@ -386,7 +386,7 @@ def create_test_report() -> Path:
     add_heading(doc, "7 Docker 与部署验证")
     add_body(doc, "项目已编写 Dockerfile、docker-compose.yml、requirements-docker.txt 和 .dockerignore。docker compose config --quiet 可正常解析，Compose 包含 api:8000 与 frontend:8501 两个服务，前端依赖 API 健康检查。")
     add_body(doc, "2026 年 9 月 20 日使用本机已有的 boss-qiupin-api:week3 镜像作为构建基底重建 API 镜像，将已验证的 BGE 模型快照和 FAISS 索引打包到镜像，避免运行时下载模型。docker compose 已成功启动 api 和 frontend 两个容器，API healthcheck 为 healthy，/api/health 返回 12,000 条数据，8501 前端返回 HTTP 200。Dockerfile 默认基础镜像仍为 python:3.12-slim。")
-    add_body(doc, "容器内正式 RAG 冒烟测试返回 method=faiss_bge_embedding、embedding_model=BAAI/bge-small-zh-v1.5，召回结果保留 source_url、crawl_time 和 data_origin。真实 Agent 调用返回 model_call=true、protocol=responses、model=gpt-5.6-sol，并成功调用 cluster_summary 本地工具。云服务器部署和在线地址仍需在 Render 上完成最终发布。")
+    add_body(doc, "容器内正式 RAG 冒烟测试返回 method=faiss_bge_embedding、embedding_model=BAAI/bge-small-zh-v1.5，召回结果保留 source_url、crawl_time 和 data_origin。真实 Agent 调用返回 model_call=true、protocol=responses、model=gpt-5.6-sol，并成功调用 cluster_summary 本地工具。2026 年 9 月 20 日通过 Cloudflare Quick Tunnel 提供临时公网演示地址 https://mesa-clip-weight-fleece.trycloudflare.com，实测 HTTP 200。该地址映射到本机 8501 前端，依赖 Docker 与 cloudflared 持续运行，不等同于永久云服务器托管。")
 
     add_heading(doc, "8 已知限制与后续工作")
     add_bullets(
@@ -397,7 +397,7 @@ def create_test_report() -> Path:
             "scikit-learn 持久化对象由 1.6.1 生成、当前运行时为 1.9.1，测试出现版本警告，后续应统一版本并重建索引。",
             "Starlette/httpx 出现弃用提示，当前未影响用例执行，但需在依赖升级时处理。",
             "match_score 是岗位排序参考，不是录用概率；quality_score 表示岗位信息透明度与完整度，不是企业信誉。",
-            "Week 3 已完成本地容器验证、测试报告和 AI 使用说明。Render 已作为云端部署目标，但在在线服务成功返回健康检查之前，不把本地地址写成云端演示地址。",
+            "Week 3 已完成本地容器验证、测试报告、AI 使用说明和临时公网演示。公网地址是 Cloudflare Quick Tunnel，依赖本机 Docker 与隧道进程持续运行，不等同于永久云服务器托管。",
         ],
     )
 
@@ -526,7 +526,7 @@ Week 3 接口回归测试共 14 项，14 项通过，0 项失败，耗时 14.623
 
 ## 部署状态
 
-Docker 配置文件已完成，Compose 可解析。API 与前端容器均已启动，健康检查、FAISS+BGE 检索和 gpt-5.6-sol Responses Agent 真实工具调用均已验证。Render 云端发布尚未得到可访问的最终在线地址。
+Docker 配置文件已完成，Compose 可解析。API 与前端容器均已启动，健康检查、FAISS+BGE 检索和 gpt-5.6-sol Responses Agent 真实工具调用均已验证。2026 年 9 月 20 日通过 Cloudflare Quick Tunnel 提供临时公网演示地址 `https://mesa-clip-weight-fleece.trycloudflare.com`，实测 HTTP 200。该地址依赖本机 Docker 与 cloudflared 进程持续运行，不等同于永久云服务器托管。
 """
     ai_md = """# AI 使用说明与反思报告
 

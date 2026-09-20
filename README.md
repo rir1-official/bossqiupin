@@ -79,6 +79,10 @@ HF_HUB_OFFLINE=1 ./scripts/python.sh -m job_analysis.rag_faiss search "Python �
 
 访问 `http://127.0.0.1:8501` 使用前端，访问 `http://127.0.0.1:8000/docs` 查看 API。支持粘贴简历文本以及 TXT/可复制文本型 PDF 上传；真实模型开关打开时使用 OpenAI-compatible Function Calling，关闭时才使用明确标记的本地规则 Agent。联调说明见 [`docs/week3_integration.md`](docs/week3_integration.md)，现场演示顺序见 [`submit/Week3现场演示脚本.md`](submit/Week3现场演示脚本.md)。
 
+### 临时公网演示地址
+
+2026 年 9 月 20 日已通过 Cloudflare Quick Tunnel 暴露前端：`https://mesa-clip-weight-fleece.trycloudflare.com`（实测 HTTP 200）。该地址用于答辩演示，依赖本机 Docker 和 `tmp/cloudflared/cloudflared` 持续运行，不是永久云服务器地址；本地备用地址为 `http://127.0.0.1:8501`。
+
 ## 首日站点核验清单
 
 1. 在浏览器中手动确认列表页公开可访问、可翻页且页面含岗位详情链接。

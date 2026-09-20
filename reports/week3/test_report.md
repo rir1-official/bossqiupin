@@ -20,4 +20,4 @@ Week 3 接口回归测试共 14 项，14 项通过，0 项失败，耗时 14.623
 
 ## 部署状态
 
-Docker 配置文件已完成，Compose 可解析。API 与前端容器均已启动，健康检查、FAISS+BGE 检索和 gpt-5.6-sol Responses Agent 真实工具调用均已验证。Render 云端发布尚未得到可访问的最终在线地址。
+Docker 配置文件已完成，Compose 可解析。API 与前端容器均已启动，健康检查、FAISS+BGE 检索和 gpt-5.6-sol Responses Agent 真实工具调用均已验证。2026 年 9 月 20 日通过 Cloudflare Quick Tunnel 提供临时公网演示地址 `https://mesa-clip-weight-fleece.trycloudflare.com`，实测 HTTP 200。该地址依赖本机 Docker 与 cloudflared 进程持续运行，不等同于永久云服务器托管。

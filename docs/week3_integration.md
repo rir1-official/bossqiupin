@@ -82,5 +82,5 @@ PDF 由 `pypdf.PdfReader` 逐页提取文本，随后和粘贴文本一样进入
 - RAG 结果是岗位检索证据，不替代人工判断；
 - 当前已完成本地联调、接口回归测试、性能优化和 Docker 容器验证。API 镜像内打包已验证的 BGE 模型快照与 FAISS 索引，运行时不需从 Hugging Face 下载模型。api 与 frontend 容器已启动，API healthcheck 为 healthy，前端和 API 均可在本机访问。
 - 2026-09-20 实测 `/api/retrieve` 返回 `method=faiss_bge_embedding`、`embedding_model=BAAI/bge-small-zh-v1.5`；`/api/chat` 返回 `model_call=true`、`protocol=responses`、`model=gpt-5.6-sol`，并成功执行本地 `cluster_summary` 工具。
-- Render 已作为云端部署目标。正式 FAISS 索引与 BGE 模型快照已打包为 GitHub Release 资产，Dockerfile 在构建时下载并校验 SHA-256，因此无需把大模型文件直接提交到 Git。当前只剩 Render 服务发布、Secret 配置和公网健康检查；在线服务通过健康检查之前，不将本地地址写成云端演示地址。
+- 正式 FAISS 索引与 BGE 模型快照已打包为 GitHub Release 资产，Dockerfile 在构建时下载并校验 SHA-256，因此无需把大模型文件直接提交到 Git。2026 年 9 月 20 日已通过 Cloudflare Quick Tunnel 提供临时公网演示地址：`https://mesa-clip-weight-fleece.trycloudflare.com`，实测 HTTP 200。该地址映射到本机 8501 前端，依赖本机 Docker 与 `cloudflared` 进程持续运行，不等同于永久云服务器托管。Render 配置仍保留为可选的后续云部署方案。
 - 真实模型接口受网络和服务端响应时间影响；现场应提前完成一次真实调用，并保留 `reports/agent/real_demo_output.json` 作为可核验的备用记录。备用记录必须明确标注为已保存的真实调用结果，不能说成离线规则结果。

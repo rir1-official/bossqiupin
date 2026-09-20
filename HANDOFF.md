@@ -57,5 +57,5 @@ HF_HUB_OFFLINE=1 ./scripts/python.sh -m job_analysis.rag_faiss search "Python �
 - **启动命令**：`./scripts/python.sh -m app.run_api` 与 `./scripts/python.sh -m app.run_frontend`；详细说明见 `docs/week3_integration.md`，现场步骤见 `submit/Week3现场演示脚本.md`。
 - **测试与优化报告**：已完成并提交 `submit/测试报告.docx`，Markdown 证据见 `reports/week3/test_report.md`；预热后 Top-5 匹配中位数为 0.1789 秒。
 - **AI 使用说明与反思报告**：已完成并提交 `submit/AI使用说明与反思报告.docx`，明确项目方案、主要算法逻辑和前端视觉由项目负责人主导，AI 仅辅助部分代码、调试、测试和文档。
-- **Week 3 部署状态**：本地 Docker 镜像已构建并启动，已打包本地 BGE 模型快照和正式 FAISS 索引。api 容器 healthcheck 为 healthy，`/api/health` 返回 12,000 条数据，`/api/retrieve` 返回 `faiss_bge_embedding`，frontend 容器可访问 http://127.0.0.1:8501。云构建所需的 FAISS+BGE 资产已发布到 GitHub Release，Dockerfile 会下载并校验固定 SHA-256。
-- **剩余 Week 3 工作**：Render 云端部署和在线地址仍未完成；用户已明确最终答辩 PPT 不由本任务制作。测试报告、AI 使用说明与反思报告、部署手册和本地容器验证已完成。
+- **Week 3 部署状态**：本地 Docker 镜像已构建并启动，已打包本地 BGE 模型快照和正式 FAISS 索引。api 容器 healthcheck 为 healthy，`/api/health` 返回 12,000 条数据，`/api/retrieve` 返回 `faiss_bge_embedding`，frontend 容器可访问 http://127.0.0.1:8501。云构建所需的 FAISS+BGE 资产已发布到 GitHub Release，Dockerfile 会下载并校验固定 SHA-256。2026 年 9 月 20 日已通过 Cloudflare Quick Tunnel 提供临时公网演示地址：`https://mesa-clip-weight-fleece.trycloudflare.com`，实测 HTTP 200。
+- **Week 3 收尾状态**：功能、接口测试、性能优化、Docker 容器验证、临时公网演示、测试报告和 AI 使用说明与反思报告均已完成。该公网地址是答辩用临时隧道，不是永久云服务器托管；演示期间必须保持本机 Docker 服务和 `cloudflared` 进程运行。Render 云端发布未作为本次交付前提，用户已明确最终答辩 PPT 不由本任务制作。
