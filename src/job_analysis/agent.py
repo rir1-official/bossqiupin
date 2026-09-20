@@ -3,6 +3,8 @@
 ``LocalJobAgent`` remains deterministic and offline. ``OpenAIJobAgent`` uses a
 real model call for intent understanding, tool selection, and final response;
 the tools themselves continue to execute against the local cleaned dataset.
+The production Agent follows the configured Codex provider's Responses API
+contract and does not silently switch protocols after a request failure.
 """
 
 from __future__ import annotations
@@ -354,11 +356,25 @@ def _codex_runtime_settings() -> Dict[str, str]:
     provider_name = ""
     if DEFAULT_CODEX_CONFIG.exists() and (not base_url or not model or not wire_api):
         try:
-            import tomllib
+            config_text = DEFAULT_CODEX_CONFIG.read_text(encoding="utf-8")
+            try:
+                import tomllib
+                config = tomllib.loads(config_text)
+            except ImportError:
+                # Python 3.10 and older do not ship tomllib.  Keep this small
+                # fallback limited to the three scalar settings used here so
+                # the local Codex provider can still configure the Agent.
+                def _toml_scalar(pattern: str) -> str:
+                    match = re.search(pattern, config_text, flags=re.MULTILINE)
+                    return match.group(1).strip() if match else ""
 
-            config = tomllib.loads(DEFAULT_CODEX_CONFIG.read_text(encoding="utf-8"))
+                model = model or _toml_scalar(r'^model\s*=\s*["\']([^"\']+)["\']')
+                provider_name = provider_name or _toml_scalar(r'^model_provider\s*=\s*["\']([^"\']+)["\']')
+                base_url = base_url or _toml_scalar(r'^base_url\s*=\s*["\']([^"\']+)["\']')
+                wire_api = wire_api or _toml_scalar(r'^wire_api\s*=\s*["\']([^"\']+)["\']')
+                config = {}
             model = model or str(config.get("model", "")).strip()
-            provider_name = str(config.get("model_provider", "")).strip()
+            provider_name = provider_name or str(config.get("model_provider", "")).strip()
             providers = config.get("model_providers", {})
             provider = providers.get(provider_name, {}) if isinstance(providers, dict) else {}
             if not isinstance(provider, dict):
@@ -446,22 +462,18 @@ class OpenAIJobAgent:
         settings = _codex_runtime_settings()
         self.api_key = (api_key or settings["api_key"]).strip()
         self.base_url = (base_url or settings["base_url"]).strip()
-        self.model = (model or settings["model"] or "grok-composer-2.5-fast").strip()
+        self.model = (model or settings["model"] or "gpt-5.6-sol").strip()
         self.provider = str(settings.get("provider") or "").strip()
         self.max_turns = max(1, int(max_turns or os.getenv("AGENT_MAX_TURNS", "4")))
-        requested_protocol = (protocol or os.getenv("AGENT_PROTOCOL") or settings.get("protocol") or "auto").strip().lower()
+        requested_protocol = (protocol or os.getenv("AGENT_PROTOCOL") or settings.get("protocol") or "responses").strip().lower()
         if requested_protocol in {"", "auto"}:
-            # Prefer the Codex provider wire_api when present. Otherwise keep the
-            # previous heuristic: custom gateways often speak Chat Completions.
-            if settings.get("protocol") in {"chat", "responses"}:
-                requested_protocol = settings["protocol"]
-            elif self.base_url and "api.openai.com" not in self.base_url:
-                requested_protocol = "chat"
-            else:
-                requested_protocol = "responses"
-        if requested_protocol not in {"chat", "responses"}:
-            raise AgentConfigurationError("AGENT_PROTOCOL 只能是 chat、responses 或 auto")
-        self.protocol = requested_protocol
+            requested_protocol = settings.get("protocol") or "responses"
+        if requested_protocol not in {"responses", "response"}:
+            raise AgentConfigurationError(
+                "当前 Agent 固定使用 Codex custom provider 的 Responses API；"
+                "请将 AGENT_PROTOCOL 设为 responses。"
+            )
+        self.protocol = "responses"
         if not self.api_key:
             raise AgentConfigurationError(
                 "未找到 OPENAI_API_KEY；请设置环境变量，或在 Codex 登录后使用 ~/.codex/auth.json。"
@@ -559,107 +571,8 @@ class OpenAIJobAgent:
             "explanation": "真实 Responses API 调用已完成；工具函数仍在本地执行并保留岗位溯源字段。",
         }
 
-    def _run_chat(self, task: str, top_k: int = 5) -> Dict[str, Any]:
-        started = time.perf_counter()
-        messages: List[Dict[str, Any]] = [
-            {"role": "system", "content": REAL_AGENT_SYSTEM_PROMPT},
-            {"role": "user", "content": task},
-        ]
-        tool_calls: List[Dict[str, Any]] = []
-        tool_results: List[Dict[str, Any]] = []
-        final_answer = ""
-        turns = 0
-
-        for turns in range(1, self.max_turns + 1):
-            response = self.client.chat.completions.create(
-                model=self.model,
-                messages=messages,
-                tools=_chat_tools(),
-                tool_choice="auto",
-            )
-            message = response.choices[0].message
-            messages.append(message.model_dump(exclude_none=True))
-            calls = list(message.tool_calls or [])
-            if not calls:
-                final_answer = str(message.content or "").strip()
-                break
-            for call in calls:
-                raw_arguments = call.function.arguments or "{}"
-                try:
-                    arguments = json.loads(raw_arguments)
-                except (TypeError, json.JSONDecodeError):
-                    arguments = {}
-                if "top_k" in arguments:
-                    arguments["top_k"] = min(max(1, int(arguments["top_k"])), max(1, int(top_k)))
-                name = str(call.function.name)
-                result = self._dispatch(name, arguments)
-                serialised = json.dumps(result, ensure_ascii=False, default=_json_default)
-                tool_calls.append({"tool": name, "arguments": arguments, "call_id": str(call.id)})
-                tool_results.append({"tool": name, "call_id": str(call.id), "result": result})
-                messages.append({"role": "tool", "tool_call_id": str(call.id), "content": serialised})
-
-        if not final_answer:
-            final_answer = "模型在达到最大工具调用轮次前未返回最终文本。"
-        return {
-            "agent_mode": "openai_chat_completions",
-            "model_call": True,
-            "protocol": "chat_completions",
-            "model": self.model,
-            "provider": self.provider or "custom",
-            "base_url": self.base_url or "https://api.openai.com/v1",
-            "task": task,
-            "turns": turns,
-            "tool_calls": tool_calls,
-            "tool_results": tool_results,
-            "answer": final_answer,
-            "elapsed_seconds": round(time.perf_counter() - started, 3),
-            "explanation": "真实 Chat Completions 工具调用已完成；工具函数仍在本地执行并保留岗位溯源字段。",
-        }
-
-    @staticmethod
-    def _looks_like_gateway_html_error(exc: BaseException) -> bool:
-        msg = str(exc).lower()
-        needles = (
-            "expected json body but got something else (html)",
-            "html",
-            "cloudflare",
-            "<!doctype html",
-            "<html",
-            "bad gateway",
-            "502",
-            "503",
-            "504",
-        )
-        # Keep this conservative: only treat obvious non-JSON/gateway failures as retryable.
-        if "expected json body but got something else" in msg:
-            return True
-        if "<!doctype html" in msg or "<html" in msg:
-            return True
-        if "cloudflare" in msg:
-            return True
-        return False
-
     def run(self, task: str, top_k: int = 5) -> Dict[str, Any]:
-        if self.protocol == "chat":
-            return self._run_chat(task, top_k=top_k)
-        try:
-            return self._run_responses(task, top_k=top_k)
-        except Exception as exc:
-            # Some custom gateways advertise responses but intermittently return HTML
-            # error pages for tool-calling turns. Fall back to chat completions.
-            if not self._looks_like_gateway_html_error(exc):
-                raise
-            result = self._run_chat(task, top_k=top_k)
-            result["protocol_fallback"] = {
-                "from": "responses",
-                "to": "chat_completions",
-                "reason": str(exc)[:300],
-            }
-            result["explanation"] = (
-                "Responses 协议调用失败后已自动改用 Chat Completions；"
-                "工具仍在本地执行并保留岗位溯源字段。"
-            )
-            return result
+        return self._run_responses(task, top_k=top_k)
 
 
 def write_prompt_version(path: Path) -> None:

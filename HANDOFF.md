@@ -20,7 +20,7 @@
 | 岗位聚类 | 已完成并复跑 | `data/processed/clustering/`、`reports/clustering/`；当前选择 K=4 |
 | 多模型对比 | Markdown 已完成 | `reports/multi_model_comparison.md`；DOCX 不在本次覆盖范围 |
 | RAG 检索实验 | 已完成 | FAISS + BAAI/bge-small-zh-v1.5；当前分区感知索引 55,984 个 Chunk；12 个测试问题；`reports/rag/` |
-| Agent 原型 | 已完成真实模型版与本地 fallback | JSON Schema、Prompt v1、真实 Chat Completions/Responses 入口、规则路由 fallback；真实记录见 `reports/agent/real_demo_output.json` |
+| Agent 原型 | 已完成真实模型版与本地 fallback | JSON Schema、Prompt v1、`gpt-5.6-sol` Responses Function Calling、规则路由 fallback；真实记录见 `reports/agent/real_demo_output.json` |
 | 中期汇报二材料 | 大纲已完成 | `submit/中期汇报二PPT大纲.md` |
 | Week 3 前后端集成 | 本地联调已完成 | `app/backend.py`、`frontend/streamlit_app.py`、`tests/test_week3_api.py`；FastAPI + Streamlit 已打通简历输入、匹配、推荐、检索、聚类和 Agent 对话 |
 
@@ -50,12 +50,12 @@ HF_HUB_OFFLINE=1 ./scripts/python.sh -m job_analysis.rag_faiss search "Python �
 4. 所有岗位记录保留 `source_url`、`crawl_time`、`data_origin`。
 5. 不把岗位质量分说成企业信誉或录用概率；不把 TF-IDF 说成深度学习。
 
-## Week 3 当前状态（截至 2026-09-19）
+## Week 3 当前状态（截至 2026-09-20）
 
 - **本地前后端集成已完成**：FastAPI 后端封装评分、匹配、聚类、检索和对话接口；Streamlit 前端提供 Apple 风格工作台，打通“上传简历 -> 匹配 -> 推荐 -> 检索/聚类 -> Agent 对话”。
-- **联调与测试证据**：`tests/test_week3_api.py` 的 13 项接口测试已通过；全量测试共 27 项、0 失败；浏览器已验证首屏、匹配页、岗位探索页和本地 Agent 页；真实 `/api/chat` 已验证返回 `model_call=true` 的 OpenAI-compatible Chat Completions 结果。
+- **联调与测试证据**：`tests/test_week3_api.py` 的 14 项接口测试已通过；全量测试共 29 项、0 失败；浏览器已验证首屏、匹配页、岗位探索页和 Agent 页；真实 `/api/chat` 的既有验证记录显示 `model_call=true`、`protocol=responses`、`model=gpt-5.6-sol` 并成功调用本地工具。本轮收尾未重复调用真实模型接口。
 - **启动命令**：`./scripts/python.sh -m app.run_api` 与 `./scripts/python.sh -m app.run_frontend`；详细说明见 `docs/week3_integration.md`，现场步骤见 `submit/Week3现场演示脚本.md`。
-- **测试与优化报告**：已完成并提交 `submit/测试报告.docx`，Markdown 证据见 `reports/week3/test_report.md`；预热后 Top-5 匹配中位数约 0.1705 秒。
+- **测试与优化报告**：已完成并提交 `submit/测试报告.docx`，Markdown 证据见 `reports/week3/test_report.md`；预热后 Top-5 匹配中位数为 0.1789 秒。
 - **AI 使用说明与反思报告**：已完成并提交 `submit/AI使用说明与反思报告.docx`，明确项目方案、主要算法逻辑和前端视觉由项目负责人主导，AI 仅辅助部分代码、调试、测试和文档。
-- **Week 3 部署状态**：本地 Docker 镜像已构建并启动。首次拉取默认 python:3.12-slim 时 Docker Hub 超时，后使用本机已有 moodtune-pyspark:3.5.3 作为临时基础镜像完成 ARM64 本地验证；Dockerfile 默认基础镜像未改变。api 容器 healthcheck 为 healthy，/api/health 返回 12,000 条数据，frontend 容器可访问 http://127.0.0.1:8501。
-- **剩余 Week 3 工作**：云端部署和在线地址、最终答辩 PPT 与模拟答辩仍未完成；测试报告、AI 使用说明与反思报告、部署手册和本地容器验证已完成。
+- **Week 3 部署状态**：本地 Docker 镜像已构建并启动，已打包本地 BGE 模型快照和正式 FAISS 索引。api 容器 healthcheck 为 healthy，`/api/health` 返回 12,000 条数据，`/api/retrieve` 返回 `faiss_bge_embedding`，frontend 容器可访问 http://127.0.0.1:8501。云构建所需的 FAISS+BGE 资产已发布到 GitHub Release，Dockerfile 会下载并校验固定 SHA-256。
+- **剩余 Week 3 工作**：Render 云端部署和在线地址仍未完成；用户已明确最终答辩 PPT 不由本任务制作。测试报告、AI 使用说明与反思报告、部署手册和本地容器验证已完成。

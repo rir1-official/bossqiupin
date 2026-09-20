@@ -20,6 +20,9 @@ SUBMIT = ROOT / "submit"
 REPORTS = ROOT / "reports/week3"
 TIMINGS_PATH = REPORTS / "api_test_timings_optimized.json"
 
+# PingFang SC is installed and embeddable on this macOS host.  It covers both
+# Simplified Chinese and Latin text, avoiding the missing-glyph boxes produced
+# by the unavailable Arial Unicode MS family in the local renderer.
 FONT_CN = "PingFang SC"
 ACCENT = "1D4ED8"
 HEADER_FILL = "17324D"
@@ -277,14 +280,14 @@ def create_test_report() -> Path:
         "基于全球远程招聘岗位大数据的岗位质量评分与人岗匹配研究",
         [
             ("测试阶段", "Week 3 系统集成与优化"),
-            ("测试日期", "2026 年 9 月 19 日"),
+            ("测试日期", "2026 年 9 月 20 日"),
             ("数据范围", "Himalayas 全球远程岗位 12,000 条"),
             ("实施范围", "FastAPI 接口、Streamlit 前端、简历解析、人岗匹配与 Agent 工作流"),
         ],
     )
 
     add_heading(doc, "1 报告结论")
-    add_body(doc, "本轮测试围绕系统的正常、边界和异常三条路径展开。Week 3 接口回归测试共 13 项，结果为 13 项通过、0 项失败，总耗时 14.083 秒。测试覆盖服务健康检查、文本及 TXT 简历输入、Top-k 边界、聚类查询、岗位评分、本地 Agent 路由以及多类错误输入。")
+    add_body(doc, "本轮测试围绕系统的正常、边界和异常三条路径展开。Week 3 接口回归测试共 14 项，结果为 14 项通过、0 项失败，总耗时 14.623 秒；项目全量单元测试共 29 项，29 项通过，0 项失败。测试覆盖服务健康检查、文本及 TXT 简历输入、Top-k 边界、聚类查询、岗位评分、本地 Agent 路由、真实模型错误处理以及多类异常输入。")
     add_body(doc, f"人岗匹配已完成索引复用优化。同一测试环境中，优化前的单次匹配中位数约为 13.1534 秒；优化后冷启动首次请求耗时 {cold:.4f} 秒，索引预热后 Top-5 请求中位数为 {warm['warm_match_top_k_5']['median_seconds']:.4f} 秒。冷启动成本仍然存在，但连续演示时的等待已显著降低。")
 
     add_heading(doc, "2 测试范围与环境")
@@ -313,8 +316,9 @@ def create_test_report() -> Path:
             ("POST", "/api/match/upload", "TXT/PDF 简历上传", "文件类型、空文件、地点偏好"),
             ("POST", "/api/score", "岗位信息质量分查询", "缺少参数与未知岗位"),
             ("POST", "/api/cluster", "K-Means 聚类摘要", "聚类 ID 与业务名称"),
-            ("POST", "/api/retrieve", "FAISS+BGE 岗位检索", "Top-k 证据与本地回退"),
-            ("POST", "/api/chat", "Agent 工具路由", "本地模式不发起外部模型请求"),
+            ("POST", "/api/retrieve", "FAISS+BGE 岗位检索", "Top-k 证据；索引不可用时返回 503"),
+            ("GET", "/api/agent_runtime", "Agent 运行配置", "模型、协议与凭据配置状态"),
+            ("POST", "/api/chat", "Agent 工具路由", "本地模式不调用模型；真实模式使用 Responses Function Calling"),
         ],
         [1.3, 3.3, 5.0, 6.2],
         8.6,
@@ -336,9 +340,10 @@ def create_test_report() -> Path:
         ("W3-11", "异常", "POST /match/upload", "空 TXT 文件", "返回 400 和可定位信息", "通过"),
         ("W3-12", "异常", "POST /match/upload", "top_k=21", "返回 400", "通过"),
         ("W3-13", "异常", "POST /match/upload", "DOCX 文件", "非 PDF/TXT 类型被拒绝，400", "通过"),
+        ("W3-14", "异常", "POST /chat", "真实模型网关抛出异常", "返回 502；不降级为本地答案", "通过"),
     ]
     add_table(doc, ["编号", "路径", "接口", "输入与条件", "预期结果", "实际结果"], test_rows, [1.6, 1.8, 4.0, 7.0, 8.5, 2.0], 8.4)
-    add_body(doc, "执行命令：./scripts/python.sh -m unittest tests.test_week3_api -v。本轮结果为 Ran 13 tests in 14.083s，OK。")
+    add_body(doc, "执行命令：./scripts/python.sh -m unittest tests.test_week3_api -v。本轮结果为 Ran 14 tests in 14.623s，OK。全量命令 ./scripts/python.sh -m unittest discover -s tests -v 结果为 Ran 29 tests in 14.623s，OK。")
 
     section = doc.add_section(WD_SECTION.NEW_PAGE)
     section.orientation = 0
@@ -354,7 +359,7 @@ def create_test_report() -> Path:
         doc,
         ["问题", "原因", "修复方式", "验证"],
         [
-            ("匹配请求等待约 13 秒", "每次请求重复拟合 12,000 条岗位的 TF-IDF 矩阵", "LocalJobAgent 初始化时构建 MatchingIndex，后续请求只转换简历向量", "预热后中位数 0.1705–0.2108 秒"),
+            ("匹配请求等待约 13 秒", "每次请求重复拟合 12,000 条岗位的 TF-IDF 矩阵", "LocalJobAgent 初始化时构建 MatchingIndex，后续请求只转换简历向量", "预热后中位数 0.1789–0.2118 秒"),
             ("纯空白简历可进入业务层", "min_length=1 不会过滤空格和换行", "strip 后增加显式空值校验", "新增 W3-04 回归测试并通过"),
             ("性能结果缺少可复跑记录", "旧文件只有优化前测量", "新增 benchmark_week3_api.py 并输出 JSON", "api_test_timings_optimized.json 已生成"),
         ],
@@ -380,7 +385,8 @@ def create_test_report() -> Path:
 
     add_heading(doc, "7 Docker 与部署验证")
     add_body(doc, "项目已编写 Dockerfile、docker-compose.yml、requirements-docker.txt 和 .dockerignore。docker compose config --quiet 可正常解析，Compose 包含 api:8000 与 frontend:8501 两个服务，前端依赖 API 健康检查。")
-    add_body(doc, "2026 年 9 月 19 日首次构建因 Docker Hub 拉取 python:3.12-slim 超时；随后使用本机已有的 moodtune-pyspark:3.5.3 作为临时构建基础镜像完成了 ARM64 本地镜像构建。docker compose -p bossqiupin up -d 已成功启动 api 和 frontend 两个容器，API healthcheck 为 healthy，/api/health 返回 12,000 条数据，8501 前端返回 HTTP 200。Dockerfile 默认基础镜像仍为 python:3.12-slim。云服务器部署和在线地址尚未完成。")
+    add_body(doc, "2026 年 9 月 20 日使用本机已有的 boss-qiupin-api:week3 镜像作为构建基底重建 API 镜像，将已验证的 BGE 模型快照和 FAISS 索引打包到镜像，避免运行时下载模型。docker compose 已成功启动 api 和 frontend 两个容器，API healthcheck 为 healthy，/api/health 返回 12,000 条数据，8501 前端返回 HTTP 200。Dockerfile 默认基础镜像仍为 python:3.12-slim。")
+    add_body(doc, "容器内正式 RAG 冒烟测试返回 method=faiss_bge_embedding、embedding_model=BAAI/bge-small-zh-v1.5，召回结果保留 source_url、crawl_time 和 data_origin。真实 Agent 调用返回 model_call=true、protocol=responses、model=gpt-5.6-sol，并成功调用 cluster_summary 本地工具。云服务器部署和在线地址仍需在 Render 上完成最终发布。")
 
     add_heading(doc, "8 已知限制与后续工作")
     add_bullets(
@@ -391,7 +397,7 @@ def create_test_report() -> Path:
             "scikit-learn 持久化对象由 1.6.1 生成、当前运行时为 1.9.1，测试出现版本警告，后续应统一版本并重建索引。",
             "Starlette/httpx 出现弃用提示，当前未影响用例执行，但需在依赖升级时处理。",
             "match_score 是岗位排序参考，不是录用概率；quality_score 表示岗位信息透明度与完整度，不是企业信誉。",
-            "Week 3 已完成本地容器验证、测试报告和 AI 使用说明。由于当前没有云平台账号，云服务器部署与在线地址尚未生成；15–20 分钟最终答辩 PPT 与模拟答辩不纳入本次文档交付。",
+            "Week 3 已完成本地容器验证、测试报告和 AI 使用说明。Render 已作为云端部署目标，但在在线服务成功返回健康检查之前，不把本地地址写成云端演示地址。",
         ],
     )
 
@@ -409,7 +415,7 @@ def create_ai_report() -> Path:
         "项目设计、AI 辅助范围与质量控制说明",
         [
             ("项目名称", "基于全球远程招聘岗位大数据的岗位质量评分与人岗匹配研究"),
-            ("报告日期", "2026 年 9 月 19 日"),
+            ("报告日期", "2026 年 9 月 20 日"),
             ("使用原则", "人工主导方案与验收，AI 辅助部分代码、排错和文档生成"),
         ],
     )
@@ -427,7 +433,7 @@ def create_ai_report() -> Path:
             ("数据口径", "选择 Himalayas、保持 city=Remote，要求保留溯源字段", "辅助检查字段与文档表述", "检查 source_url、crawl_time、data_origin"),
             ("算法逻辑", "设计评分、匹配、聚类、RAG 与 Agent 的功能目标和主要口径", "协助把方案落地为代码，补充参数校验和解释输出", "实际运行、对比结果、人工审阅"),
             ("前端产品设计", "主导导航、页面动线、黑白视觉、间距和文案调整", "根据反馈修改 Streamlit/CSS 代码并调试交互", "浏览器逐页检查和人工试用"),
-            ("接口与测试", "确定要求覆盖正常、边界和异常路径", "协助编写 FastAPI 接口、单元测试和性能基准脚本", "13 项用例实际执行通过"),
+            ("接口与测试", "确定要求覆盖正常、边界和异常路径", "协助编写 FastAPI 接口、单元测试和性能基准脚本", "Week 3 接口 14 项、全量 29 项实际执行通过"),
             ("文档与汇报", "确定报告范围、取舍和表述重点", "协助组织内容、生成 Word/PPT 和检查版式", "人工核对指标、截图、未完成项和语义边界"),
         ],
         [2.6, 5.0, 5.0, 3.8],
@@ -452,8 +458,8 @@ def create_ai_report() -> Path:
             ("岗位质量评分", "基于信息完整度与透明度的规则标签，并训练分类模型", "不得说成企业信誉或录用概率"),
             ("人岗匹配", "TF-IDF、余弦相似度与技能/类别/经验/地点加权", "match_score 是排序参考，不是录用概率"),
             ("岗位聚类", "K-Means，使用肘部法和轮廓系数选 K，PCA 降维视觉化", "聚类名称是业务解读，不是原始数据标签"),
-            ("RAG", "BGE Embedding + FAISS 向量检索；TF-IDF 仅作回退基线", "不把 TF-IDF 称为深度学习；规则金标准不等同人工标注 Recall"),
-            ("Agent", "真实 OpenAI-compatible 模型负责理解和工具选择，本地 Python 工具执行", "本地规则路由必须明确标识，不能伪装成真实模型调用"),
+            ("RAG", "BGE Embedding + FAISS 向量检索；这是唯一正式 RAG 实现", "索引或模型不可用时直接报错；TF-IDF 仅用于人岗匹配或历史对照，不参与 RAG"),
+            ("Agent", "gpt-5.6-sol 通过 Responses API 完成 Function Calling，本地 Python 工具执行", "本地规则路由必须明确标识，不能伪装成真实模型调用"),
         ],
         [3.0, 7.0, 6.4],
         8.8,
@@ -502,7 +508,7 @@ def write_markdown_sources() -> None:
 
 ## 结论
 
-Week 3 接口回归测试共 13 项，13 项通过，0 项失败，耗时 14.083 秒。测试覆盖正常、边界和异常三条路径。
+Week 3 接口回归测试共 14 项，14 项通过，0 项失败，耗时 14.623 秒。项目全量单元测试共 29 项，29 项通过，0 项失败。测试覆盖正常、边界和异常三条路径。
 
 ## 性能
 
@@ -520,7 +526,7 @@ Week 3 接口回归测试共 13 项，13 项通过，0 项失败，耗时 14.083
 
 ## 部署状态
 
-Docker 配置文件已完成，Compose 可解析。首次拉取默认基础镜像时出现网络超时，随后使用本机已有基础镜像完成 ARM64 本地构建并启动 API 与前端容器；云服务器部署和在线地址尚未完成。
+Docker 配置文件已完成，Compose 可解析。API 与前端容器均已启动，健康检查、FAISS+BGE 检索和 gpt-5.6-sol Responses Agent 真实工具调用均已验证。Render 云端发布尚未得到可访问的最终在线地址。
 """
     ai_md = """# AI 使用说明与反思报告
 

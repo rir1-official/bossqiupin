@@ -1,13 +1,20 @@
+name: bossqiupin
+
 services:
   api:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.local
     image: boss-qiupin-api:week3
     command: ["uvicorn", "app.backend:app", "--host", "0.0.0.0", "--port", "8000"]
     environment:
       PYTHONPATH: /app/src
-      AGENT_PROTOCOL: auto
+      # OpenAI-compatible Agent runtime. The key is supplied by the host
+      # environment and is never committed to the repository.
+      AGENT_MODEL: ${AGENT_MODEL:-gpt-5.6-sol}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-https://hanjiu.yunyukeji.cloud/v1}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      AGENT_PROTOCOL: ${AGENT_PROTOCOL:-responses}
     ports:
       - "8000:8000"
     healthcheck:
@@ -20,7 +27,7 @@ services:
   frontend:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.local
     image: boss-qiupin-frontend:week3
     command: ["streamlit", "run", "frontend/streamlit_app.py", "--server.address", "0.0.0.0", "--server.port", "8501", "--server.headless", "true"]
     environment:

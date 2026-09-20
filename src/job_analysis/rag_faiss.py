@@ -540,8 +540,12 @@ def load_embedding_model(model_name: str = DEFAULT_MODEL, device: str = "auto") 
         except RuntimeError:
             # PyTorch only allows this setting before its first parallel op.
             pass
-    local_only = os.getenv("HF_LOCAL_FILES_ONLY", "0").strip().lower() in {"1", "true", "yes"}
-    return SentenceTransformer(model_name, device=resolved_device, local_files_only=local_only)
+    bundled_model = os.getenv("RAG_EMBEDDING_MODEL_PATH", "").strip()
+    # Docker packages the verified local BGE snapshot at this path.  The
+    # manifest retains the canonical model identifier for experiment traceability.
+    resolved_model_name = bundled_model or model_name
+    local_only = bundled_model or os.getenv("HF_LOCAL_FILES_ONLY", "0").strip().lower() in {"1", "true", "yes"}
+    return SentenceTransformer(resolved_model_name, device=resolved_device, local_files_only=bool(local_only))
 
 
 def encode_texts(

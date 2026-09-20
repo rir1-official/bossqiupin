@@ -1,0 +1,235 @@
+{
+  "captured_at": "2026-09-20T12:49:44.202555+08:00",
+  "scope": "Locally running Docker Compose services",
+  "health": {
+    "elapsed_seconds": 0.017,
+    "response": {
+      "status": "ok",
+      "data_records": 12000,
+      "data_source": "Himalayas authorized API collection"
+    }
+  },
+  "frontend": {
+    "status_code": 200,
+    "elapsed_seconds": 0.005
+  },
+  "agent_runtime": {
+    "elapsed_seconds": 0.003,
+    "response": {
+      "model": "gpt-5.6-sol",
+      "provider": null,
+      "base_url": "https://hanjiu.yunyukeji.cloud/v1",
+      "protocol": "responses",
+      "api_key_configured": true
+    }
+  },
+  "retrieval": {
+    "elapsed_seconds": 0.079,
+    "method": "faiss_bge_embedding",
+    "embedding_model": "BAAI/bge-small-zh-v1.5",
+    "results": [
+      {
+        "job_id": "12c2e51d2e9f2c640f55b42e",
+        "job_title": "Data Analyst IV - Advanced Analytics & Reporting - 100% remote (AUSTIN, TX)",
+        "company_name": "Capps",
+        "chunk_id": "12c2e51d2e9f2c640f55b42e::job_combined::c0001",
+        "section_name": "岗位综合文本（回退）",
+        "source_field": "rag_description",
+        "section_source": "full_description_fallback",
+        "section_index": 0,
+        "chunk_index": 1,
+        "chunk_text": "岗位名称：Data Analyst IV - Advanced Analytics & Reporting - 100% remote (AUSTIN, TX)\n公司：Capps\n岗位大类：Data Science\n岗位类别：Data Science\n技能标签：data analyst 、 advanced analytics 、 business intelligence analyst 、 data reporting specialist 、 power bi developer 、 remote data analyst 、 remote senior analyst 、 remote reporting analyst\n地区限制：United States\n文本区段：岗位综合文本（回退）\n岗位文本：\neligible employees, a defined benefit pension plan, generous time off benefits, numerous opportunities for career advancement and more. Explore more details on the Benefits of Working at HHS webpage. Functional Title: Data Analyst IV - Advanced Analytics & Reporting - 100% remote Job Title: Data Analyst IV Agency: Health & Human Services Comm Department: Data Mgt and Reporting Posting Number: 20814 Closing Date: 11/01/2026 Posting Audience: Internal and External Occupational Category: Computer and Mathematical Salary Range: $5,425.33- $7,155.75 Pay Frequency: Monthly Salary Group: TEXAS-B-24 Shift: Day Additional Shift: Telework: Eligible for Telework Travel: Up to 5% Regular/Temporary: Regular Full Time/Part Time: Full time FLSA Exempt/Non-Exempt: Exempt Facility Location: Job Location City: AUSTIN Job Location Address: 701 W 51ST ST Other Locations: MOS Codes: 0231,0239,0271,0291,2652,2659,6046,6049,8051,8825,8846,8850,14N,14NX,15AX,16KX,181X,182X,183X,1D7X1 1N0X1,1N1X1,1N4X1,1N7X1,255A,25B,26B,350F,350G,351L,351M,352N,35F,35G,35L,35M,514A,514B,5I0,5I1A 65FX,65WX,681X,682X,683X,781X,782X,783X,86P0,8K000,CT,CTR,CTT,CYB10,CYB11,CYB12,CYB13,CYB14,IS,ISM ISS,IT,ITS,SEI15,SEI23 Job",
+        "chunk_body": "eligible employees, a defined benefit pension plan, generous time off benefits, numerous opportunities for career advancement and more. Explore more details on the Benefits of Working at HHS webpage. Functional Title: Data Analyst IV - Advanced Analytics & Reporting - 100% remote Job Title: Data Analyst IV Agency: Health & Human Services Comm Department: Data Mgt and Reporting Posting Number: 20814 Closing Date: 11/01/2026 Posting Audience: Internal and External Occupational Category: Computer and Mathematical Salary Range: $5,425.33- $7,155.75 Pay Frequency: Monthly Salary Group: TEXAS-B-24 Shift: Day Additional Shift: Telework: Eligible for Telework Travel: Up to 5% Regular/Temporary: Regular Full Time/Part Time: Full time FLSA Exempt/Non-Exempt: Exempt Facility Location: Job Location City: AUSTIN Job Location Address: 701 W 51ST ST Other Locations: MOS Codes: 0231,0239,0271,0291,2652,2659,6046,6049,8051,8825,8846,8850,14N,14NX,15AX,16KX,181X,182X,183X,1D7X1 1N0X1,1N1X1,1N4X1,1N7X1,255A,25B,26B,350F,350G,351L,351M,352N,35F,35G,35L,35M,514A,514B,5I0,5I1A 65FX,65WX,681X,682X,683X,781X,782X,783X,86P0,8K000,CT,CTR,CTT,CYB10,CYB11,CYB12,CYB13,CYB14,IS,ISM ISS,IT,ITS,SEI15,SEI23 Job",
+        "chunk_char_count": 1197,
+        "section_char_count": 8170,
+        "broad_category": "Data Science",
+        "job_category": "Data Science",
+        "skills_normalized": "data analyst | advanced analytics | business intelligence analyst | data reporting specialist | power bi developer | remote data analyst | remote senior analyst | remote reporting analyst",
+        "city": "Remote",
+        "district": "United States",
+        "source_url": "https://himalayas.app/companies/capps/jobs/data-analyst-iv-advanced-analytics-reporting-100-remote-austin-tx",
+        "crawl_time": "2026-09-08T13:25:13.363032+00:00",
+        "data_origin": "authorized_api_collection",
+        "faiss_score": 0.6804537773132324,
+        "rank": 1
+      }
+    ]
+  },
+  "real_agent": {
+    "elapsed_seconds": 59.236,
+    "response": {
+      "agent_mode": "openai_responses",
+      "model_call": true,
+      "protocol": "responses",
+      "model": "gpt-5.6-sol",
+      "provider": "custom",
+      "base_url": "https://hanjiu.yunyukeji.cloud/v1",
+      "task": "请调用 cluster_summary 工具，用两句话概括第0类岗位。",
+      "turns": 2,
+      "tool_calls": [
+        {
+          "tool": "cluster_summary",
+          "arguments": {
+            "cluster_id": 0
+          },
+          "call_id": "call_q4JQT7EktfwHS6evdvj4eZGz"
+        }
+      ],
+      "tool_results": [
+        {
+          "tool": "cluster_summary",
+          "call_id": "call_q4JQT7EktfwHS6evdvj4eZGz",
+          "result": {
+            "cluster_id": 0,
+            "business_name": "云平台与 DevOps 工程岗位",
+            "job_count": 3206,
+            "share": 0.2672,
+            "dominant_broad_category": "Engineering",
+            "category_distribution": {
+              "Engineering": 1642,
+              "Data Science": 988,
+              "Other": 108,
+              "Sales": 103,
+              "Design": 69
+            },
+            "top_job_categories": [
+              {
+                "category": "Developer",
+                "count": 1420
+              },
+              {
+                "category": "Data Science",
+                "count": 254
+              },
+              {
+                "category": "Design",
+                "count": 92
+              },
+              {
+                "category": "Sales",
+                "count": 74
+              },
+              {
+                "category": "Developer, Data Science",
+                "count": 61
+              },
+              {
+                "category": "Operations",
+                "count": 56
+              },
+              {
+                "category": "Product",
+                "count": 37
+              },
+              {
+                "category": "Hardware Engineer",
+                "count": 36
+              }
+            ],
+            "top_terms": [
+              "engineer",
+              "engineering",
+              "developer",
+              "software",
+              "senior",
+              "software engineer",
+              "development",
+              "cloud",
+              "engineer senior",
+              "design"
+            ],
+            "top_titles": [
+              {
+                "title": "Senior Software Engineer",
+                "count": 27
+              },
+              {
+                "title": "Senior Python Data Scraping Engineer (Freelance)",
+                "count": 25
+              },
+              {
+                "title": "Freelance Agent Evaluation Engineer",
+                "count": 22
+              },
+              {
+                "title": "Freelance Presentation Designer",
+                "count": 22
+              },
+              {
+                "title": "React Engineer - Remote, Latin America",
+                "count": 19
+              },
+              {
+                "title": "Competitive Programming Expert - Freelance AI Trainer",
+                "count": 19
+              },
+              {
+                "title": "Initiativbewerbung",
+                "count": 17
+              },
+              {
+                "title": "Freelance Annotator (English) - AI Trainer",
+                "count": 16
+              },
+              {
+                "title": "AI Trainer - Freelance Data Annotator",
+                "count": 16
+              },
+              {
+                "title": "Senior Data Engineer",
+                "count": 15
+              }
+            ],
+            "top_skills": [
+              {
+                "skill": "software engineer",
+                "count": 669
+              },
+              {
+                "skill": "backend development",
+                "count": 306
+              },
+              {
+                "skill": "fullstack development",
+                "count": 243
+              },
+              {
+                "skill": "cloud engineer",
+                "count": 198
+              },
+              {
+                "skill": "data engineering",
+                "count": 194
+              },
+              {
+                "skill": "backend engineering",
+                "count": 185
+              },
+              {
+                "skill": "platform engineering",
+                "count": 180
+              },
+              {
+                "skill": "devops engineer",
+                "count": 166
+              },
+              {
+                "skill": "frontend development",
+                "count": 159
+              },
+              {
+                "skill": "backend engineer",
+                "count": 146
+              }
+            ],
+            "interpretation": "该类包含 3,206 个岗位，主要属于 Engineering。 高频文本特征包括：engineer、engineering、developer、software、senior。 名称依据主类别与高权重词生成，便于业务阅读。"
+          }
+        }
+      ],
+      "answer": "第0类为“云平台与 DevOps 工程岗位”，共3,206个，占比26.72%，主要属于 Engineering 类别。岗位以软件开发、后端/全栈开发、云工程、数据工程、平台工程和 DevOps 为主，常见职位包括高级软件工程师、高级数据工程师等。",
+      "elapsed_seconds": 59.229,
+      "explanation": "真实 Responses API 调用已完成；工具函数仍在本地执行并保留岗位溯源字段。"
+    }
+  },
+  "passed": true
+}

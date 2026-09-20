@@ -63,7 +63,7 @@ HF_HUB_OFFLINE=1 ./scripts/python.sh -m job_analysis.rag_faiss search "Python �
 ./scripts/python.sh scripts/create_week2_report.py --no-docx
 ```
 
-聚类采用加权 TF-IDF -> TruncatedSVD(50 维) -> K-Means，当前综合选择 K=4。正式 RAG 实验使用 `BAAI/bge-small-zh-v1.5` 生成 512 维 Embedding，并通过 FAISS `IndexFlatIP` 检索；这与旧 TF-IDF 基线严格区分。Agent 输出 `model_call=false`，表示没有调用外部大模型。
+聚类采用加权 TF-IDF -> TruncatedSVD(50 维) -> K-Means，当前综合选择 K=4。正式 RAG 实验使用 `BAAI/bge-small-zh-v1.5` 生成 512 维 Embedding，并通过 FAISS `IndexFlatIP` 检索；这与旧 TF-IDF 基线严格区分。Agent 默认读取本机 Codex 的 OpenAI-compatible 配置，模型为 `gpt-5.6-sol`；只有显式关闭真实模型时才输出 `model_call=false` 的本地规则结果。
 
 ## Week 3 本地系统演示
 

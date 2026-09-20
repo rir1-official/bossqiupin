@@ -1,5 +1,6 @@
 import io
 import unittest
+from unittest.mock import patch
 
 from fastapi.testclient import TestClient
 
@@ -84,6 +85,15 @@ class Week3ApiTests(unittest.TestCase):
         payload = response.json()
         self.assertFalse(payload["model_call"])
         self.assertEqual(payload["agent_mode"], "local_rule_router")
+
+    def test_real_agent_error_is_not_silently_downgraded(self):
+        with patch("app.backend.OpenAIJobAgent", side_effect=RuntimeError("gateway timeout")):
+            response = self.client.post(
+                "/api/chat",
+                json={"task": "说明聚类结果", "use_real_model": True},
+            )
+        self.assertEqual(response.status_code, 502)
+        self.assertIn("gpt-5.6-sol 调用未成功", response.json()["detail"])
 
     def test_txt_upload_uses_same_matching_pipeline(self):
         response = self.client.post(

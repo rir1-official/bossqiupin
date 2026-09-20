@@ -1,6 +1,6 @@
 # Week 3 前后端集成与联调说明
 
-更新时间：2026-09-19
+更新时间：2026-09-20
 
 ## 1. 集成目标
 
@@ -70,9 +70,9 @@ PDF 由 `pypdf.PdfReader` 逐页提取文本，随后和粘贴文本一样进入
 
 ## 6. Agent 模式边界
 
-前端 toggle 打开时，请求 `/api/chat` 的 `use_real_model=true`，后端从当前运行环境读取已有 OpenAI-compatible 配置，仅在内存中使用凭据，不把 API Key 写入项目文件。模型负责自然语言理解、工具选择和最终回答，`search_jobs`、`score_job`、`match_resume`、`cluster_summary`、`retrieve_jobs` 工具仍由本地 Python 代码执行。
+前端 toggle 打开时，请求 `/api/chat` 的 `use_real_model=true`，后端从当前运行环境读取已有 OpenAI-compatible 配置（当前模型为 `gpt-5.6-sol`，协议为 Responses API），仅在内存中使用凭据，不把 API Key 写入项目文件。模型负责自然语言理解、工具选择和最终回答，`search_jobs`、`score_job`、`match_resume`、`cluster_summary`、`retrieve_jobs` 工具仍由本地 Python 代码执行。
 
-若接口或凭据不可用，页面应显示错误；只有用户主动关闭 toggle，才使用 `use_real_model=false` 的本地规则路由，并在返回中标记 `model_call=false`。本地模式不能冒充真实大模型调用。
+若接口或凭据不可用，页面应显示错误；只有用户主动关闭 toggle，才使用 `use_real_model=false` 的本地规则路由，并在返回中标记 `model_call=false`。开启真实模型时，后端不会自动降级或伪装成本地回答。
 
 ## 7. 已知限制
 
@@ -80,5 +80,7 @@ PDF 由 `pypdf.PdfReader` 逐页提取文本，随后和粘贴文本一样进入
 - 技能抽取依赖现有技能词典，未识别的同义词可能降低技能重合分；
 - 扫描 PDF 尚未接入 OCR；
 - RAG 结果是岗位检索证据，不替代人工判断；
-- 当前已完成本地联调、接口回归测试、性能优化和 Docker 容器验证。首次构建拉取 python:3.12-slim 时因 Docker Hub 网络超时，随后使用本机已有 moodtune-pyspark:3.5.3 作为临时基础镜像完成构建；Dockerfile 默认基础镜像仍为 python:3.12-slim。api 与 frontend 容器已启动，API healthcheck 为 healthy，前端和 API 均可在本机访问。云端部署和在线地址尚未完成。
+- 当前已完成本地联调、接口回归测试、性能优化和 Docker 容器验证。API 镜像内打包已验证的 BGE 模型快照与 FAISS 索引，运行时不需从 Hugging Face 下载模型。api 与 frontend 容器已启动，API healthcheck 为 healthy，前端和 API 均可在本机访问。
+- 2026-09-20 实测 `/api/retrieve` 返回 `method=faiss_bge_embedding`、`embedding_model=BAAI/bge-small-zh-v1.5`；`/api/chat` 返回 `model_call=true`、`protocol=responses`、`model=gpt-5.6-sol`，并成功执行本地 `cluster_summary` 工具。
+- Render 已作为云端部署目标。正式 FAISS 索引与 BGE 模型快照已打包为 GitHub Release 资产，Dockerfile 在构建时下载并校验 SHA-256，因此无需把大模型文件直接提交到 Git。当前只剩 Render 服务发布、Secret 配置和公网健康检查；在线服务通过健康检查之前，不将本地地址写成云端演示地址。
 - 真实模型接口受网络和服务端响应时间影响；现场应提前完成一次真实调用，并保留 `reports/agent/real_demo_output.json` 作为可核验的备用记录。备用记录必须明确标注为已保存的真实调用结果，不能说成离线规则结果。

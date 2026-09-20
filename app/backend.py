@@ -211,24 +211,13 @@ def chat(request: ChatRequest) -> Dict[str, Any]:
         except AgentConfigurationError as exc:
             raise HTTPException(status_code=503, detail=f"真实模型不可用: {exc}") from exc
         except Exception as exc:
-            # Keep the demo usable when the upstream gateway flakes.
-            try:
-                fallback = local.run(request.task, top_k=request.top_k)
-            except SemanticRetrievalUnavailable as retrieval_exc:
-                raise HTTPException(
-                    status_code=503,
-                    detail=(
-                        "RAG 必须使用 FAISS+BGE；当前语义索引不可用，未回退到 TF-IDF。"
-                        f" {retrieval_exc}"
-                    ),
-                ) from retrieval_exc
-            base_answer = fallback.get("answer") or fallback.get("explanation") or ""
-            fallback["model_call"] = False
-            fallback["real_model_error"] = str(exc)[:500]
-            note = "真实模型网关暂时失败，已自动切换本地规则路由。原因：" + str(exc)
-            fallback["answer"] = (str(base_answer).strip() + chr(10) + chr(10) + "（" + note + "）").strip()
-            fallback["explanation"] = "真实模型调用失败后已回退到本地规则路由。"
-            return fallback
+            # A real-model request must never be represented as a local answer.
+            # The UI can explicitly request use_real_model=false when it wants
+            # the deterministic rule router.
+            raise HTTPException(
+                status_code=502,
+                detail=f"gpt-5.6-sol 调用未成功: {str(exc)[:500]}",
+            ) from exc
     return _agent().run(request.task, top_k=request.top_k)
 
 @app.get("/api/agent_runtime")
